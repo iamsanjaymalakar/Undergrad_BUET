@@ -1,9 +1,9 @@
-#include<stdio.h>
-#include<stdlib.h>
-#include<math.h>
+#include<bits/stdc++.h>
 
-#include <windows.h>
+//#include <windows.h>
 #include <GL/glut.h>
+
+using namespace std;
 
 #define pi (2*acos(0.0))
 
@@ -431,7 +431,7 @@ void specialKeyListener(int key, int x,int y)
         break;
     case GLUT_KEY_HOME:
         side-=0.5;
-		side=max(side,0);
+		side=max(side,0.0);
 		break;
 	case GLUT_KEY_END:
 		side+=0.5;
