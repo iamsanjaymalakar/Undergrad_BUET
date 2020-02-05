@@ -1,0 +1,617 @@
+commit 456b4aaba3e8efc7d5907b4ea4d51f0ad877aee8
+Author: Sanjay Malakar <iamsanjaymalakar@gmail.com>
+Date:   Sat Jan 19 21:06:02 2019 +0600
+
+    Done
+
+diff --git a/Makefile b/Makefile
+index 09d790c..e011a93 100644
+--- a/Makefile
++++ b/Makefile
+@@ -16,12 +16,14 @@ OBJS = \
+ 	pipe.o\
+ 	proc.o\
+ 	sleeplock.o\
++	sock.o\
+ 	spinlock.o\
+ 	string.o\
+ 	swtch.o\
+ 	syscall.o\
+ 	sysfile.o\
+ 	sysproc.o\
++	syssock.o\
+ 	trapasm.o\
+ 	trap.o\
+ 	uart.o\
+@@ -181,6 +183,7 @@ UPROGS=\
+ 	_usertests\
+ 	_wc\
+ 	_zombie\
++	_socktest\
+ 
+ fs.img: mkfs README $(UPROGS)
+ 	./mkfs fs.img README $(UPROGS)
+diff --git a/defs.h b/defs.h
+index 82fb982..ae6ae7e 100644
+--- a/defs.h
++++ b/defs.h
+@@ -121,6 +121,14 @@ int             wait(void);
+ void            wakeup(void*);
+ void            yield(void);
+ 
++// sock.c
++void            sinit(void);
++int             listen(int);
++int             connect(int, const char*);
++int             send(int, const char*, int);
++int             recv(int, char*, int);
++int             disconnect(int);
++
+ // swtch.S
+ void            swtch(struct context**, struct context*);
+ 
+diff --git a/main.c b/main.c
+index 9924e64..ac0b23e 100644
+--- a/main.c
++++ b/main.c
+@@ -4,6 +4,7 @@
+ #include "memlayout.h"
+ #include "mmu.h"
+ #include "proc.h"
++#include "sock.h"
+ #include "x86.h"
+ 
+ static void startothers(void);
+@@ -27,10 +28,11 @@ main(void)
+   consoleinit();   // console hardware
+   uartinit();      // serial port
+   pinit();         // process table
++  sinit();         // socket table
+   tvinit();        // trap vectors
+   binit();         // buffer cache
+   fileinit();      // file table
+-  ideinit();       // disk 
++  ideinit();       // disk
+   startothers();   // start other processors
+   kinit2(P2V(4*1024*1024), P2V(PHYSTOP)); // must come after startothers()
+   userinit();      // first user process
+diff --git a/param.h b/param.h
+index a7e90ef..5c4f7a1 100644
+--- a/param.h
++++ b/param.h
+@@ -1,3 +1,5 @@
++#define NPORT       128  // maximum number of ports
++#define NSOCK        32  // maximum number of sockets
+ #define NPROC        64  // maximum number of processes
+ #define KSTACKSIZE 4096  // size of per-process kernel stack
+ #define NCPU          8  // maximum number of CPUs
+@@ -12,3 +14,10 @@
+ #define NBUF         (MAXOPBLOCKS*3)  // size of disk block cache
+ #define FSSIZE       1000  // size of file system in blocks
+ 
++//new define
++#define E_NOTFOUND -1025 // Accessing a socket that is not in the stable should return E_NOTFOUND
++#define E_ACCESS_DENIED -1026 // Accessing a socket from wrong process should return E_ACCESS_DENIED
++#define E_WRONG_STATE -1027 // Attempts to send or receive, when the socket is not connected, should return E_WRONG_STATE
++#define E_FAIL -1028 // If no more socket can be opened (limit exceeded), return E_FAIL
++#define E_INVALID_ARG -1029 // Parameter issues should return E_INVALID_ARG
++#define BUFFER_SIZE 256
+diff --git a/sock.c b/sock.c
+new file mode 100644
+index 0000000..f86c85d
+--- /dev/null
++++ b/sock.c
+@@ -0,0 +1,239 @@
++#include "types.h"
++#include "defs.h"
++#include "param.h"
++#include "spinlock.h"
++#include "sock.h"
++#include "memlayout.h"
++#include "mmu.h"
++#include "x86.h"
++#include "proc.h"
++
++
++
++struct {
++  struct spinlock lock;
++  struct sock sock[NSOCK];
++  int port[NPORT];
++} stable;
++
++void
++sinit(void)
++{
++  initlock(&stable.lock, "ptable");
++  int i=0;
++  for(i=0;i<NPORT;i++)
++    stable.port[i]=0;
++  for(i=0;i<NSOCK;i++)
++  {
++    stable.sock[i].state = CLOSED;
++    stable.sock[i].localPort = -1;
++    stable.sock[i].remotePort = -1;
++    stable.sock[i].isEmpty = 1;
++  }  
++}
++
++int
++listen(int lport) {
++
++  //find a unused socket
++  struct sock *s;
++  acquire(&stable.lock);
++  // make lport flag 1
++  if(!stable.port[lport])
++    stable.port[lport]=1;
++  else
++  {
++    release(&stable.lock);
++    return -1;
++  }
++  for(s = stable.sock; s < &stable.sock[NSOCK]; s++)
++  {
++    if(s->state == CLOSED)
++    {
++      s->state = LISTENING;
++      s->localPort = lport;
++      s->ownerID = myproc()->pid;
++      release(&stable.lock);
++      return 0;
++    }
++  }
++  release(&stable.lock);
++  return E_FAIL;
++}
++
++int
++connect(int rport, const char* host) {
++  // find if rport exists in any socket 
++  int i;
++  struct sock *s;
++  acquire(&stable.lock);
++  for(s = stable.sock; s < &stable.sock[NSOCK]; s++)
++  {
++    if(s->state == LISTENING && s->localPort==rport)
++      goto found;
++  }
++  release(&stable.lock);
++  return E_NOTFOUND;
++  found:
++  //find a unused port for client 
++  i=0;
++  int cPort=-1;
++  for(i=0;i<NPORT;i++)
++  {
++    if(!stable.port[i])
++    {
++      stable.port[i]=1;
++      cPort = i;
++      break;
++    }
++  }
++  // find a socket for client port 
++  struct sock *c;
++  for(c = stable.sock; c < &stable.sock[NSOCK]; c++)
++  {
++    if(c->state == CLOSED)
++    {
++      c->state = CONNECTED;
++      c->localPort = cPort;
++      c->remotePort = rport;
++      c->ownerID = myproc()->pid;
++      goto sockFound;
++    }
++  }
++  // sock not found
++  release(&stable.lock);
++  return E_FAIL;
++  sockFound:
++  // change the socket of server
++  s->state = CONNECTED;
++  s->remotePort = cPort;
++  release(&stable.lock);
++  return cPort;
++}
++
++int
++send(int lport, const char* data, int n) {
++  // find the socket using localport lport
++  int sPort;
++  struct sock *s;
++  acquire(&stable.lock);
++  for(s = stable.sock; s < &stable.sock[NSOCK]; s++)
++  {
++    //state
++    if(s->localPort==lport && s->state!=CONNECTED)
++    {
++      release(&stable.lock);
++      return E_WRONG_STATE;
++    }
++    if(s->state == CONNECTED && s->localPort==lport)
++      goto found;
++  }
++  release(&stable.lock);
++  return E_NOTFOUND;
++  found:
++  //owner check
++  if(s->ownerID != myproc()->pid)
++  {
++    release(&stable.lock);
++    return E_ACCESS_DENIED;
++  }
++  sPort = s->remotePort;
++  // find the socket using localport rport
++  for(s = stable.sock; s < &stable.sock[NSOCK]; s++)
++  {
++     //state
++    if(s->localPort==sPort && s->state!=CONNECTED)
++    {
++      release(&stable.lock);
++      return E_WRONG_STATE;
++    }
++    if(s->state == CONNECTED && s->localPort==sPort)
++      goto found2;
++  }
++  release(&stable.lock);
++  return E_NOTFOUND;
++  found2:
++  if(s->isEmpty)
++  {
++    strncpy(s->buffer,data,n);
++    s->isEmpty=0;
++    wakeup(s);
++  }
++  else
++  {
++    sleep(s, &stable.lock); 
++    strncpy(s->buffer,data,n);
++    s->isEmpty=0;
++  }
++  release(&stable.lock);
++  return 0;
++}
++
++
++int
++recv(int lport, char* data, int n) {
++  // find the socket using localport lport
++  struct sock *s;
++  acquire(&stable.lock);
++  for(s = stable.sock; s < &stable.sock[NSOCK]; s++)
++  {
++    //state
++    if(s->localPort==lport && s->state!=CONNECTED)
++    {
++      release(&stable.lock);
++      return E_WRONG_STATE;
++    }
++    if(s->state == CONNECTED && s->localPort==lport)
++      goto found;
++  }
++  release(&stable.lock);
++  return E_NOTFOUND;
++  found:
++  //owner check
++  if(s->ownerID != myproc()->pid)
++  {
++    release(&stable.lock);
++    return E_ACCESS_DENIED;
++  }
++  if(s->isEmpty)
++  {
++    sleep(s,&stable.lock); 
++    strncpy(data,s->buffer,n);
++    s->isEmpty=1;
++  }
++  else
++  {
++    strncpy(data,s->buffer,n);
++    s->isEmpty=1;
++    wakeup(s);
++  }
++  release(&stable.lock);
++  return 0;
++}
++
++int
++disconnect(int lport) {
++  struct sock *s;
++  acquire(&stable.lock);
++  for(s = stable.sock; s < &stable.sock[NSOCK]; s++)
++  {
++    if(s->state == CONNECTED && s->localPort==lport)
++      goto found;
++  }
++  release(&stable.lock);
++  return E_NOTFOUND;
++  found:
++  //owner check
++  if(s->ownerID != myproc()->pid)
++  {
++    release(&stable.lock);
++    return E_ACCESS_DENIED;
++  }
++  s->state = CLOSED;
++  s->localPort = -1;
++  s->remotePort = -1;
++  s->isEmpty = 1;
++  stable.port[lport]=0;
++  release(&stable.lock);
++  return 0;
++}
+\ No newline at end of file
+diff --git a/sock.h b/sock.h
+new file mode 100644
+index 0000000..0ba28b4
+--- /dev/null
++++ b/sock.h
+@@ -0,0 +1,17 @@
++
++//
++// TODO: Define an enumeration to represent socket state.
++//
++enum sockState { CONNECTED, LISTENING, CLOSED };
++
++//
++// TODO: Define a structure to represent a socket.
++//
++struct sock {
++	enum sockState state;
++	int localPort;
++	int remotePort;
++	char buffer[BUFFER_SIZE];
++	int isEmpty;
++	int ownerID; 
++};
+diff --git a/socktest.c b/socktest.c
+new file mode 100644
+index 0000000..6803446
+--- /dev/null
++++ b/socktest.c
+@@ -0,0 +1,77 @@
++#include "types.h"
++#include "user.h"
++
++int serverPort = 10;
++
++void clientProc() {
++  int clientPort;
++  char buf[128];
++  char host[16] = "localhost";
++
++  // sleep for 100 clock ticks to ensure that the server process starts first.
++  sleep(100);
++
++  printf(1, "Client>> Attempting to connect to port %d, host %s ...\n", serverPort, host);
++  clientPort = connect(serverPort, host);
++  sleep(20);
++  printf(1, "Client>> connect() returned %d\n", clientPort);
++
++  while (1) {
++    printf(1, "Client>> Enter text to send to server: ");
++    gets(buf, sizeof(buf));
++    buf[strlen(buf) - 1] = '\0'; // Eliminating the '\n'
++    send(clientPort, buf, strlen(buf) + 1);
++
++    if (0 == strcmp(buf, "exit")) {
++      printf(1, "Client exiting...\n");
++      disconnect(clientPort);
++      break;
++    }
++
++    //sleep(100 + uptime() % 100);
++
++    recv(clientPort, buf, sizeof(buf));
++    printf(1, "Client>> Received: \"%s\"\n", buf);
++  }
++}
++
++void serverProc() {
++  int status;
++  char buf[128];
++
++  printf(1, "Server>> Starting to listen at port %d ...\n", serverPort);
++  status = listen(serverPort);
++  printf(1, "Server>> listen() returned %d\n", status);
++  sleep(100 + uptime() % 100);
++  while (1) {
++    //sleep(100 + uptime() % 100);
++
++    recv(serverPort, buf, sizeof(buf));
++    printf(1, "Server>> Received: \"%s\"\n", buf);
++
++    if (0 == strcmp(buf, "exit")) {
++      printf(1, "Server exiting...\n");
++      disconnect(serverPort);
++      break;
++    }
++
++   // sleep(100 + uptime() % 100);
++
++    strcpy(buf+strlen(buf), " OK");
++    send(serverPort, buf, strlen(buf) + 1);
++  }
++}
++
++
++int main(int argc, char *argv[])
++{
++  if (0 == fork()) {
++    clientProc();
++    exit();
++  } else {
++    serverProc();
++    // This is the parent process. So, it needs to wait before client terminates
++    wait();
++    exit();
++  }
++}
+diff --git a/syscall.c b/syscall.c
+index ee85261..c06bb58 100644
+--- a/syscall.c
++++ b/syscall.c
+@@ -60,7 +60,7 @@ argptr(int n, char **pp, int size)
+ {
+   int i;
+   struct proc *curproc = myproc();
+- 
++
+   if(argint(n, &i) < 0)
+     return -1;
+   if(size < 0 || (uint)i >= curproc->sz || (uint)i+size > curproc->sz)
+@@ -103,6 +103,11 @@ extern int sys_unlink(void);
+ extern int sys_wait(void);
+ extern int sys_write(void);
+ extern int sys_uptime(void);
++extern int sys_listen(void);
++extern int sys_connect(void);
++extern int sys_send(void);
++extern int sys_recv(void);
++extern int sys_disconnect(void);
+ 
+ static int (*syscalls[])(void) = {
+ [SYS_fork]    sys_fork,
+@@ -126,6 +131,11 @@ static int (*syscalls[])(void) = {
+ [SYS_link]    sys_link,
+ [SYS_mkdir]   sys_mkdir,
+ [SYS_close]   sys_close,
++[SYS_listen]  sys_listen,
++[SYS_connect] sys_connect,
++[SYS_send]    sys_send,
++[SYS_recv]    sys_recv,
++[SYS_disconnect] sys_disconnect
+ };
+ 
+ void
+diff --git a/syscall.h b/syscall.h
+index bc5f356..289fb4b 100644
+--- a/syscall.h
++++ b/syscall.h
+@@ -20,3 +20,8 @@
+ #define SYS_link   19
+ #define SYS_mkdir  20
+ #define SYS_close  21
++#define SYS_listen  22
++#define SYS_connect  23
++#define SYS_send  24
++#define SYS_recv  25
++#define SYS_disconnect  26
+diff --git a/syssock.c b/syssock.c
+new file mode 100644
+index 0000000..90e3aec
+--- /dev/null
++++ b/syssock.c
+@@ -0,0 +1,68 @@
++#include "types.h"
++#include "defs.h"
++#include "param.h"
++#include "memlayout.h"
++#include "mmu.h"
++#include "x86.h"
++#include "proc.h"
++#include "param.h"
++
++int
++sys_listen(void)
++{
++  int port = 0;
++  argint(0, &port);
++  if(port>=0 && port<NPORT)
++    return listen(port);
++  return E_INVALID_ARG;
++}
++
++int
++sys_connect(void)
++{
++  int port = 0;
++  char *host = 0;
++  argint(0, &port);
++  argstr(1, &host);
++  if((port>=0 && port<NPORT) && ((!strncmp(host,"localhost",9)) || (!strncmp(host,"127.0.0.1",9))))
++    return connect(port, host);
++  return E_INVALID_ARG;
++}
++
++int
++sys_send(void)
++{
++  int port = 0;
++  char* buf = 0;
++  int n = 0;
++  argint(0, &port);
++  argstr(1, &buf);
++  argint(2, &n);
++  if((port>=0 && port<NPORT) && (n>0 && n<=BUFFER_SIZE))
++    return send(port, buf, n);
++  return E_INVALID_ARG;
++}
++
++int
++sys_recv(void)
++{
++  int port = 0;
++  char* buf = 0;
++  int n = 0;
++  argint(0, &port);
++  argstr(1, &buf);
++  argint(2, &n);
++  if((port>=0 && port<NPORT) && (n>0 && n<=BUFFER_SIZE))
++    return recv(port, buf, n);
++  return E_INVALID_ARG;
++}
++
++int
++sys_disconnect(void)
++{
++  int port = 0;
++  argint(0, &port);
++  if(port>=0 && port<NPORT)
++    return disconnect(port);
++  return E_INVALID_ARG;
++}
+diff --git a/user.h b/user.h
+index 4f99c52..a00baca 100644
+--- a/user.h
++++ b/user.h
+@@ -23,6 +23,11 @@ int getpid(void);
+ char* sbrk(int);
+ int sleep(int);
+ int uptime(void);
++int listen(int);
++int connect(int, const char* host);
++int send(int, const char*, int);
++int recv(int, char*, int);
++int disconnect(int);
+ 
+ // ulib.c
+ int stat(const char*, struct stat*);
+@@ -37,3 +42,12 @@ void* memset(void*, int, uint);
+ void* malloc(uint);
+ void free(void*);
+ int atoi(const char*);
++
++
++//new define
++#define E_NOTFOUND -1025 // Accessing a socket that is not in the stable should return E_NOTFOUND
++#define E_ACCESS_DENIED -1026 // Accessing a socket from wrong process should return E_ACCESS_DENIED
++#define E_WRONG_STATE -1027 // Attempts to send or receive, when the socket is not connected, should return E_WRONG_STATE
++#define E_FAIL -1028 // If no more socket can be opened (limit exceeded), return E_FAIL
++#define E_INVALID_ARG -1029 // Parameter issues should return E_INVALID_ARG
++#define BUFFER_SIZE 256
+diff --git a/usys.S b/usys.S
+index 8bfd8a1..2ac5ed0 100644
+--- a/usys.S
++++ b/usys.S
+@@ -29,3 +29,9 @@ SYSCALL(getpid)
+ SYSCALL(sbrk)
+ SYSCALL(sleep)
+ SYSCALL(uptime)
++SYSCALL(listen)
++SYSCALL(connect)
++SYSCALL(send)
++SYSCALL(recv)
++SYSCALL(disconnect)
++
