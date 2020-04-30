@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.MotionBlur?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="791.0" prefWidth="656.0" style="-fx-background-color: #031c30;" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Client.ClientUIController">
+    <stylesheets>
+        <URL value="@clientui.css" />
+    </stylesheets>
+   <children>
+      <AnchorPane layoutX="-1.0" prefHeight="115.0" prefWidth="656.0" style="-fx-: solid;" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Text fx:id="display" fill="#00bfff" layoutX="39.0" layoutY="75.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="330.3916015625">
+               <font>
+                  <Font size="49.0" />
+               </font>
+            </Text>
+         </children>
+      </AnchorPane>
+      <TabPane accessibleRole="BUTTON" layoutX="-431.0" layoutY="402.0" prefHeight="146.0" prefWidth="656.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab styleClass="myButton" text="Message">
+               <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="71.0" prefWidth="656.0" />
+               </content>
+          </Tab>
+          <Tab styleClass="myButton" text="Emo">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+      <ScrollPane layoutX="-1.0" layoutY="127.0" prefHeight="649.0" prefWidth="656.0">
+         <content>
+            <ListView fx:id="chatPane" prefHeight="647.0" prefWidth="654.0" />
+         </content>
+      </ScrollPane>
+      <AnchorPane layoutY="775.0" prefHeight="170.0" prefWidth="656.0">
+         <children>
+            <TextField fx:id="input" layoutX="14.0" layoutY="62.0" onKeyPressed="#keyPressed" prefHeight="84.0" prefWidth="560.0" />
+            <Button fx:id="sendButton" layoutX="587.0" layoutY="113.0" mnemonicParsing="false" onMouseClicked="#click" styleClass="myButton" text="Send" textFill="WHITE">
+               <effect>
+                  <MotionBlur angle="184.5" radius="0.0" />
+               </effect>
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Button>
+            <ImageView fx:id="emo01" fitHeight="31.0" fitWidth="31.0" layoutX="14.0" layoutY="15.0" onMouseClicked="#emo01" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@emoji/Emoji%20Smiley-01.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="31.0" fitWidth="34.0" layoutX="50.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@emoji/Emoji%20Smiley-08.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="31.0" fitWidth="34.0" layoutX="85.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@emoji/Emoji%20Smiley-07.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="31.0" fitWidth="34.0" layoutX="118.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@emoji/Emoji%20Smiley-12.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="31.0" fitWidth="34.0" layoutX="151.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@emoji/Emoji%20Smiley-14.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="31.0" fitWidth="34.0" layoutX="184.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@emoji/Emoji%20Smiley-16.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="31.0" fitWidth="34.0" layoutX="216.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@emoji/Emoji%20Smiley-18.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="31.0" fitWidth="34.0" layoutX="248.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@emoji/Emoji%20Smiley-19.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="31.0" fitWidth="34.0" layoutX="280.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@emoji/Emoji%20Smiley-23.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="31.0" fitWidth="34.0" layoutX="314.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@emoji/Emoji%20Smiley-40.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="31.0" fitWidth="34.0" layoutX="347.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@emoji/Emoji%20Smiley-48.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="31.0" fitWidth="34.0" layoutX="380.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@emoji/Emoji%20Smiley-35.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="31.0" fitWidth="34.0" layoutX="417.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@emoji/Emoji%20Smiley-24.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="31.0" fitWidth="34.0" layoutX="452.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@emoji/Emoji%20Smiley-41.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="31.0" fitWidth="34.0" layoutX="487.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@emoji/Emoji%20Smiley-20.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="31.0" fitWidth="34.0" layoutX="518.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@emoji/Emoji%20Smiley-111.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="31.0" fitWidth="34.0" layoutX="551.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@emoji/Emoji%20Smiley-90.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="31.0" fitWidth="34.0" layoutX="586.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@emoji/Emoji%20Smiley-173.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="31.0" fitWidth="34.0" layoutX="620.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@emoji/Emoji%20Smiley-174.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="31.0" fitWidth="34.0" layoutX="619.0" layoutY="57.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@emoji/Emoji%20Smiley-172.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="31.0" fitWidth="34.0" layoutX="586.0" layoutY="59.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@emoji/Emoji%20Smiley-170.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

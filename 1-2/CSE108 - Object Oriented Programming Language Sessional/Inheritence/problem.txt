@@ -1,0 +1,154 @@
+Offline assignment on inheritance for sections A1 and A2
+Submission Rules
+
+1.Submission Steps:
+
+a.In your local machine, create a new folder; the name of the folder should be your 7 digit roll number.
+
+b.Code your solution in a file called main.cpp. Put the source code files in the folder created in (a)
+
+c.Finally, compress the folder created in (a) to produce a .zip file. The name of the .zip file should be your 7 digit roll number.
+
+d.Submit the .zip file in Moodle.
+
+2.Do not copy code. You will get negative score otherwise.
+
+3.On the evaluation day, you must be able to explain your code properly. You must bring your code on that day too.
+
+ 
+
+Problem #1
+
+Automobiles
+
+In this problem you need to model some automobiles. The skeleton class and expected behavior of different methods are provided in a separate header file. Use inheritance to implement the following 4 types of automobile, as shown in the table below. The different features of each type are mentioned here.
+
+Type
+
+Turn angle
+
+(Degree)
+
+Inc./Dec.
+
+Speed (KM)
+
+Max speed
+
+(KMH)
+
+Fuel capacity
+
+(Litre)
+
+Fuel efficiency
+
+(KM/Litre)
+
+Transmission
+
+System
+
+Car
+
+5
+
+10
+
+120
+
+30
+
+8
+
+Automatic
+
+SUV
+
+10
+
+8
+
+100
+
+50
+
+6
+
+Automatic
+
+Bus
+
+15
+
+6
+
+80
+
+80
+
+4
+
+Manual
+
+Truck
+
+25
+
+4
+
+60
+
+100
+
+2
+
+Manual
+
+ 
+
+For manual transmission system, different settings of a gear are used for different speed ranges.
+
+Manual Transmission Gear
+
+Speed Range
+
+0
+
+0
+
+1
+
+0 - 20
+
+2
+
+10 - 30
+
+3
+
+25 - 45
+
+4
+
+35 - 60
+
+5
+
+50 onward
+
+Gear position can be changed only 1 unit in either direction. Once you are at or beyond the maximum speed range of the current gear position, the speed cannot increase any further. Similarly, once you are at or below the minimum speed range of current gear position, the speed cannot decrease any further.
+
+You can add any private or public variables and/or methods in your implemented classes. You can also write helper functions outside any class for different computations. But you must adhere to the following constraints:
+
+·Header file for Automobile or AutomobileWithManualXmission class has been provided. It cannot be changed in anyways. We will compile your code with our local copy of this header. Include the Automobile.h file in your project and any source code you write. Do not copy paste from it, rather use #include "Automobile.h”.
+
+·The name of the 4 classes for the 4 different types of automobiles must be Car, SUV, Bus and Truck. Instances of each of these classes should be creatable without passing any parameters.
+
+·They must inherit from either Automobile or AutomobileWithManualXmission class.
+
+·You should write a main function to test and demonstrate your functionalities. However, be careful that we may run your classes with a different main function.
+
+·All vehicles must be initialized with maximum amount of fuel.
+
+·You need to override methods in your inherited classes as you find appropriate. 

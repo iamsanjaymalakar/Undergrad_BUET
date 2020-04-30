@@ -1,0 +1,20 @@
+/*
+1. Odd rows with white background color;
+2. ListView: when mouse over an item, highlight with a blue shade;
+3. ListView: when an item is selected, paint it with a gradient;
+4. ListView: when focus is lost from ListView, selected item should be painted with gradient;
+5. ListView: all items will start with text-fill black. But on mouse over and/or selected it will change to white.
+*/
+
+.list-cell:filled:selected:focused, .list-cell:filled:selected {
+    /* 3:, 4: */
+    -fx-background-color: linear-gradient(#5595fc 0%, #3a84fc 25%, #1e73fc 75%, #0a68ff 100%);
+    -fx-text-fill: white; /* 5 */
+}
+.list-cell { -fx-text-fill: black;-fx-font-size:22 /* 5 */ }
+.list-cell:odd { -fx-background-color: white; /* 1 */ }
+.list-cell:even { -fx-background-color: #e5fff5; /* for information */ }
+.list-cell:filled:hover { 
+    -fx-background-color: #56ff5c; /* 2 */
+    -fx-text-fill: white; /* 5 */
+}

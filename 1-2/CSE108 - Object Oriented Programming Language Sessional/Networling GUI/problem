@@ -1,0 +1,12 @@
+Offline assignment (REPEAT + GUI for bonus) on Networking for section A
+Offline assignment (REPEAT + GUI for bonus) on Networking for section A.
+
+For testing your client, you can use the following server
+
+Command to run the server:
+
+Java Server <ServerName>  <port>
+
+Note that in this server a port number argument at command line is provided, since some people may have difficulty to run it on port 5050 as mentioned earlier. So, you can now try to run the server at whatever port. Then run your client accordingly.
+
+On the other hand, if you would like to test your server, you can use the Client class in that .zip file. Note, however, the client code is hardcoded to expect that the server is running at port 4545. 

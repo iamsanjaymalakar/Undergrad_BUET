@@ -1,0 +1,27 @@
+Project (Term assignment) submission for section A
+Folder structure of your project
+Let the root folder of your project is called ProjectRoot. All the source code of your project is inside this folder, or inside some package within this folder.
+
+If your project uses images or any other binary content, all such content should be stored in a subfolder called BinaryContent. (If you want you can have further subfolders inside this folder).
+
+If your project uses any text files (e.g. configurations, pre-loaded data from a text file, javaFX markup files (fxml), style sheet etc.), all such files should be stored in a subfolder called TextContent. (If you want you can have further subfolders inside this folder)
+
+After compiling your source code, we will put all the class files inside the ProjectRoot folder within appropriate package subfolder structure. We will run your project from the ProjectRoot folder using command line. So, the folders BinaryContent and TextContent will be available in the current working directory. As such, when you load any files, you should appropriately use relative path.
+
+You must write your codes in such a way to abide by these requirements and store the necessary binary and text contents in the appropriate locations as mentioned above.
+
+Submission
+
+In addition to demonstrating your project, you must submit all the source files to Moodle. Submit only the java source code files (.java files) in appropriate folder structure (packages) as follows:
+
+a.In your local machine, create a new folder; the name of the folder should be your 7 digit roll number.
+
+b.      Copy ProjectRoot into the folder created in (a). See the above section on how to properly create the ProjectRoot folder.
+
+c.       Delete the contents of the BinaryContent sub-folder. You must hand over the contents of thid folder during project demonstration.
+
+d.Create a manual named Manual.pdf for your project. You must specify the java commands needed to run the different components (client/server) of your project.
+
+e.Finally, compress the folder created in (a) to produce a .zip file. The name of the .zip file should be your 7 digit roll number.
+
+f.Submit the .zip file in Moodle. 
