@@ -1,0 +1,107 @@
+# depslib dependency file v1.0
+1465239278 source:c:\users\asus\desktop\testing\mousedemo.cpp
+	"iGraphics.h"
+	<windows.h>
+
+1462108168 c:\users\asus\desktop\testing\igraphics.h
+	<stdio.h>
+	<stdlib.h>
+	<gl/glut.h>
+	<time.h>
+	<math.h>
+	<windows.h>
+	<gl/glaux.h>
+
+1463493393 source:c:\users\asus\desktop\xo\xo\another.cpp
+
+1465357671 source:c:\users\asus\desktop\xo\xo\mousedemo.cpp
+	"iGraphics.h"
+	<windows.h>
+
+1462108168 c:\users\asus\desktop\xo\xo\igraphics.h
+	<stdio.h>
+	<stdlib.h>
+	<gl/glut.h>
+	<time.h>
+	<math.h>
+	<windows.h>
+	<gl/glaux.h>
+
+1465409806 source:c:\users\asus\desktop\xo v2\xo\mousedemo.cpp
+	"iGraphics.h"
+	<windows.h>
+
+1462108168 c:\users\asus\desktop\xo v2\xo\igraphics.h
+	<stdio.h>
+	<stdlib.h>
+	<gl/glut.h>
+	<time.h>
+	<math.h>
+	<windows.h>
+	<gl/glaux.h>
+
+1465442561 source:f:\xo v2.1\xo\mousedemo.cpp
+	"iGraphics.h"
+	<windows.h>
+
+1465410547 f:\xo v2.1\xo\igraphics.h
+	<stdio.h>
+	<stdlib.h>
+	<gl/glut.h>
+	<time.h>
+	<math.h>
+	<windows.h>
+	<gl/glaux.h>
+
+1465444749 source:c:\users\asus\desktop\xo v2.1\xo\mousedemo.cpp
+	"iGraphics.h"
+	<windows.h>
+
+1465410548 c:\users\asus\desktop\xo v2.1\xo\igraphics.h
+	<stdio.h>
+	<stdlib.h>
+	<gl/glut.h>
+	<time.h>
+	<math.h>
+	<windows.h>
+	<gl/glaux.h>
+
+1465445808 source:c:\users\asus\desktop\xo v2.2\xo\mousedemo.cpp
+	"iGraphics.h"
+	<windows.h>
+
+1465410548 c:\users\asus\desktop\xo v2.2\xo\igraphics.h
+	<stdio.h>
+	<stdlib.h>
+	<gl/glut.h>
+	<time.h>
+	<math.h>
+	<windows.h>
+	<gl/glaux.h>
+
+1465449662 source:f:\xo v2.2 final\xo\mousedemo.cpp
+	"iGraphics.h"
+	<windows.h>
+
+1465410548 f:\xo v2.2 final\xo\igraphics.h
+	<stdio.h>
+	<stdlib.h>
+	<gl/glut.h>
+	<time.h>
+	<math.h>
+	<windows.h>
+	<gl/glaux.h>
+
+1465450392 source:c:\users\asus\desktop\xo v2.2 final\xo\mousedemo.cpp
+	"iGraphics.h"
+	<windows.h>
+
+1465410548 c:\users\asus\desktop\xo v2.2 final\xo\igraphics.h
+	<stdio.h>
+	<stdlib.h>
+	<gl/glut.h>
+	<time.h>
+	<math.h>
+	<windows.h>
+	<gl/glaux.h>
+
