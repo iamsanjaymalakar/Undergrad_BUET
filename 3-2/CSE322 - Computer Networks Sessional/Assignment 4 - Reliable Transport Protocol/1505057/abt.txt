@@ -1,0 +1,207 @@
+-----  Stop and Wait Network Simulator Version 1.1 -------- 
+
+Enter the number of messages to simulate: Enter  packet loss probability [enter 0.0 for no loss]:Enter packet corruption probability [0.0 for no corruption]:Enter average time between messages from sender's layer5 [ > 0.0]:Enter TRACE:
+EVENT time: 93.569748,  type: 1, fromlayer5  entity: 0
+Sending packet with sequence number 0 
+
+EVENT time: 99.062195,  type: 2, fromlayer3  entity: 1
+Sending ACK 0
+
+EVENT time: 101.561325,  type: 2, fromlayer3  entity: 0
+ACK 0 Received
+
+EVENT time: 1607.715088,  type: 1, fromlayer5  entity: 0
+Sending packet with sequence number 1 
+
+EVENT time: 1609.116333,  type: 2, fromlayer3  entity: 1
+Sending ACK 1
+
+EVENT time: 1614.552979,  type: 2, fromlayer3  entity: 0
+ACK 1 Received
+
+EVENT time: 2322.031250,  type: 1, fromlayer5  entity: 0
+Sending packet with sequence number 0 
+
+EVENT time: 2325.527344,  type: 2, fromlayer3  entity: 1
+Sending ACK 0
+
+EVENT time: 2328.412354,  type: 2, fromlayer3  entity: 0
+ACK 0 Received
+
+EVENT time: 3332.804199,  type: 1, fromlayer5  entity: 0
+          TOLAYER3: packet being corrupted
+Sending packet with sequence number 1 
+
+EVENT time: 3337.380615,  type: 2, fromlayer3  entity: 1
+Sending ACK 0
+
+EVENT time: 3341.256836,  type: 2, fromlayer3  entity: 0
+Seq 1 Ack 0
+
+EVENT time: 3347.804199,  type: 0, timerinterrupt   entity: 0
+Timer interrupted for 1
+
+EVENT time: 3353.365479,  type: 2, fromlayer3  entity: 1
+          TOLAYER3: packet being lost
+Sending ACK 1
+
+EVENT time: 3362.804199,  type: 0, timerinterrupt   entity: 0
+Timer interrupted for 1
+
+EVENT time: 3368.751709,  type: 2, fromlayer3  entity: 1
+Sending ACK 1
+
+EVENT time: 3370.949463,  type: 2, fromlayer3  entity: 0
+ACK 1 Received
+
+EVENT time: 5057.893555,  type: 1, fromlayer5  entity: 0
+          TOLAYER3: packet being corrupted
+Sending packet with sequence number 0 
+
+EVENT time: 5058.931152,  type: 1, fromlayer5  entity: 0
+Dropping packet, message currently in transit
+
+EVENT time: 5062.472656,  type: 2, fromlayer3  entity: 1
+Sending ACK 1
+
+EVENT time: 5064.000000,  type: 2, fromlayer3  entity: 0
+Seq 0 Ack 1
+
+EVENT time: 5072.893555,  type: 0, timerinterrupt   entity: 0
+Timer interrupted for 0
+
+EVENT time: 5074.813477,  type: 2, fromlayer3  entity: 1
+          TOLAYER3: packet being corrupted
+Sending ACK 0
+
+EVENT time: 5084.448242,  type: 2, fromlayer3  entity: 0
+Corrupted ACK 0
+
+EVENT time: 5087.893555,  type: 0, timerinterrupt   entity: 0
+Timer interrupted for 0
+
+EVENT time: 5093.975098,  type: 2, fromlayer3  entity: 1
+Sending ACK 0
+
+EVENT time: 5098.526855,  type: 2, fromlayer3  entity: 0
+ACK 0 Received
+
+EVENT time: 6557.268066,  type: 1, fromlayer5  entity: 0
+          TOLAYER3: packet being corrupted
+Sending packet with sequence number 1 
+
+EVENT time: 6564.979980,  type: 2, fromlayer3  entity: 1
+Sending ACK 0
+
+EVENT time: 6570.675781,  type: 2, fromlayer3  entity: 0
+Seq 1 Ack 0
+
+EVENT time: 6572.268066,  type: 0, timerinterrupt   entity: 0
+Timer interrupted for 1
+          TOLAYER3: packet being corrupted
+
+EVENT time: 6580.121582,  type: 2, fromlayer3  entity: 1
+Sending ACK 0
+
+EVENT time: 6587.268066,  type: 0, timerinterrupt   entity: 0
+Timer interrupted for 1
+          TOLAYER3: packet being corrupted
+
+EVENT time: 6587.982422,  type: 2, fromlayer3  entity: 0
+Seq 1 Ack 0
+
+EVENT time: 6589.269043,  type: 2, fromlayer3  entity: 1
+Sending ACK 0
+
+EVENT time: 6590.429688,  type: 2, fromlayer3  entity: 0
+Seq 1 Ack 0
+
+EVENT time: 6602.268066,  type: 0, timerinterrupt   entity: 0
+Timer interrupted for 1
+          TOLAYER3: packet being corrupted
+
+EVENT time: 6606.464355,  type: 2, fromlayer3  entity: 1
+          TOLAYER3: packet being lost
+Sending ACK 0
+
+EVENT time: 6617.268066,  type: 0, timerinterrupt   entity: 0
+Timer interrupted for 1
+
+EVENT time: 6618.811523,  type: 2, fromlayer3  entity: 1
+Sending ACK 1
+
+EVENT time: 6622.600586,  type: 2, fromlayer3  entity: 0
+ACK 1 Received
+
+EVENT time: 6854.091309,  type: 1, fromlayer5  entity: 0
+          TOLAYER3: packet being corrupted
+Sending packet with sequence number 0 
+
+EVENT time: 6861.486328,  type: 2, fromlayer3  entity: 1
+          TOLAYER3: packet being lost
+Sending ACK 1
+
+EVENT time: 6869.091309,  type: 0, timerinterrupt   entity: 0
+Timer interrupted for 0
+
+EVENT time: 6873.773926,  type: 2, fromlayer3  entity: 1
+Sending ACK 0
+
+EVENT time: 6876.742676,  type: 2, fromlayer3  entity: 0
+ACK 0 Received
+
+EVENT time: 8567.888672,  type: 1, fromlayer5  entity: 0
+          TOLAYER3: packet being corrupted
+Sending packet with sequence number 1 
+
+EVENT time: 8575.871094,  type: 2, fromlayer3  entity: 1
+          TOLAYER3: packet being lost
+Sending ACK 0
+
+EVENT time: 8582.888672,  type: 0, timerinterrupt   entity: 0
+Timer interrupted for 1
+
+EVENT time: 8588.627930,  type: 2, fromlayer3  entity: 1
+          TOLAYER3: packet being corrupted
+Sending ACK 1
+
+EVENT time: 8594.997070,  type: 2, fromlayer3  entity: 0
+Corrupted ACK 1
+
+EVENT time: 8597.888672,  type: 0, timerinterrupt   entity: 0
+Timer interrupted for 1
+
+EVENT time: 8603.325195,  type: 2, fromlayer3  entity: 1
+          TOLAYER3: packet being corrupted
+Sending ACK 1
+
+EVENT time: 8604.351563,  type: 2, fromlayer3  entity: 0
+Corrupted ACK 1
+
+EVENT time: 8612.888672,  type: 0, timerinterrupt   entity: 0
+Timer interrupted for 1
+          TOLAYER3: packet being corrupted
+
+EVENT time: 8621.395508,  type: 2, fromlayer3  entity: 1
+Sending ACK 1
+
+EVENT time: 8622.738281,  type: 2, fromlayer3  entity: 0
+ACK 1 Received
+
+EVENT time: 9351.054688,  type: 1, fromlayer5  entity: 0
+Sending packet with sequence number 0 
+
+EVENT time: 9352.104492,  type: 2, fromlayer3  entity: 1
+          TOLAYER3: packet being lost
+Sending ACK 0
+
+EVENT time: 9366.054688,  type: 0, timerinterrupt   entity: 0
+Timer interrupted for 0
+
+EVENT time: 9370.139648,  type: 2, fromlayer3  entity: 1
+Sending ACK 0
+
+EVENT time: 9371.151367,  type: 2, fromlayer3  entity: 0
+ACK 0 Received
+ Simulator terminated at time 9371.151367
+ after sending 10 msgs from layer5

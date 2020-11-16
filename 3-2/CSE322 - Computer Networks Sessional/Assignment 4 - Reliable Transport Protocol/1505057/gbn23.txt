@@ -1,0 +1,477 @@
+-----  Stop and Wait Network Simulator Version 1.1 -------- 
+
+Enter the number of messages to simulate: Enter  packet loss probability [enter 0.0 for no loss]:Enter packet corruption probability [0.0 for no corruption]:Enter average time between messages from sender's layer5 [ > 0.0]:Enter TRACE:
+EVENT time: 1.403546,  type: 1, fromlayer5  entity: 0
+A sending msg with seq 0 [window size : 1](0,)
+
+EVENT time: 6.895993,  type: 2, fromlayer3  entity: 1
+Received packet of seq 0
+
+EVENT time: 11.895992,  type: 0, timerinterrupt   entity: 1
+Sending cumulative ack 0
+
+EVENT time: 14.395123,  type: 2, fromlayer3  entity: 0
+[Ack 0] Acknum is within the window [window size 1](0,)
+[Ack 0] Stopping timer after ack
+
+EVENT time: 24.115726,  type: 1, fromlayer5  entity: 0
+A sending msg with seq 1 [window size : 1](1,)
+
+EVENT time: 25.517014,  type: 2, fromlayer3  entity: 1
+Received packet of seq 1
+
+EVENT time: 30.517014,  type: 0, timerinterrupt   entity: 1
+Sending cumulative ack 1
+
+EVENT time: 34.830471,  type: 1, fromlayer5  entity: 0
+A sending msg with seq 2 [window size : 2](1,2,)
+
+EVENT time: 35.953705,  type: 2, fromlayer3  entity: 0
+[Ack 1] Acknum is within the window [window size 2](1,2,)
+[Ack 1] Stopping timer after ack
+[Ack 1] Starting timer after ack for 2 [window size 1](2,)
+
+EVENT time: 38.326641,  type: 2, fromlayer3  entity: 1
+Received packet of seq 2
+
+EVENT time: 43.326641,  type: 0, timerinterrupt   entity: 1
+Sending cumulative ack 2
+
+EVENT time: 46.211678,  type: 2, fromlayer3  entity: 0
+[Ack 2] Acknum is within the window [window size 1](2,)
+[Ack 2] Stopping timer after ack
+
+EVENT time: 49.992065,  type: 1, fromlayer5  entity: 0
+A sending msg with seq 3 [window size : 1](3,)
+
+EVENT time: 54.568501,  type: 2, fromlayer3  entity: 1
+Received packet of seq 3
+
+EVENT time: 59.568501,  type: 0, timerinterrupt   entity: 1
+Sending cumulative ack 3
+
+EVENT time: 64.992065,  type: 0, timerinterrupt   entity: 0
+[Seq 3] Time interrupted, retransmitting current window. [window size 1](3,)
+
+EVENT time: 67.597771,  type: 2, fromlayer3  entity: 0
+[Ack 3] Acknum is within the window [window size 1](3,)
+[Ack 3] Stopping timer after ack
+
+EVENT time: 70.362556,  type: 2, fromlayer3  entity: 1
+Unexpected sequence number. [expecting 4 got 3]
+
+EVENT time: 71.419960,  type: 2, fromlayer3  entity: 0
+Ignoring ack 3 as window size 0
+
+EVENT time: 75.868408,  type: 1, fromlayer5  entity: 0
+          TOLAYER3: packet being corrupted
+A sending msg with seq 4 [window size : 1](4,)
+
+EVENT time: 80.188026,  type: 2, fromlayer3  entity: 1
+Checksum error.
+          TOLAYER3: packet being lost
+
+EVENT time: 90.868408,  type: 0, timerinterrupt   entity: 0
+[Seq 4] Time interrupted, retransmitting current window. [window size 1](4,)
+
+EVENT time: 92.360306,  type: 1, fromlayer5  entity: 0
+          TOLAYER3: packet being corrupted
+A sending msg with seq 5 [window size : 2](4,5,)
+
+EVENT time: 95.447311,  type: 2, fromlayer3  entity: 1
+Received packet of seq 4
+
+EVENT time: 99.621574,  type: 1, fromlayer5  entity: 0
+          TOLAYER3: packet being lost
+A sending msg with seq 6 [window size : 3](4,5,6,)
+
+EVENT time: 100.447311,  type: 0, timerinterrupt   entity: 1
+Sending cumulative ack 4
+
+EVENT time: 104.426102,  type: 2, fromlayer3  entity: 1
+Checksum error.
+          TOLAYER3: packet being lost
+
+EVENT time: 105.724693,  type: 2, fromlayer3  entity: 0
+[Ack 4] Acknum is within the window [window size 3](4,5,6,)
+[Ack 4] Stopping timer after ack
+[Ack 4] Starting timer after ack for 5 [window size 2](5,6,)
+
+EVENT time: 107.000000,  type: 0, timerinterrupt   entity: 0
+[Seq 5] Time interrupted, retransmitting current window. [window size 2](5,6,)
+
+EVENT time: 112.007111,  type: 2, fromlayer3  entity: 1
+Received packet of seq 5
+
+EVENT time: 117.007111,  type: 0, timerinterrupt   entity: 1
+Sending cumulative ack 5
+
+EVENT time: 117.592941,  type: 2, fromlayer3  entity: 1
+Received packet of seq 6
+
+EVENT time: 119.342812,  type: 2, fromlayer3  entity: 0
+[Ack 5] Acknum is within the window [window size 2](5,6,)
+[Ack 5] Stopping timer after ack
+[Ack 5] Starting timer after ack for 6 [window size 1](6,)
+
+EVENT time: 122.000000,  type: 0, timerinterrupt   entity: 0
+[Seq 6] Time interrupted, retransmitting current window. [window size 1](6,)
+
+EVENT time: 122.592941,  type: 0, timerinterrupt   entity: 1
+Sending cumulative ack 6
+
+EVENT time: 123.469955,  type: 1, fromlayer5  entity: 0
+A sending msg with seq 7 [window size : 2](6,7,)
+
+EVENT time: 123.804771,  type: 2, fromlayer3  entity: 1
+Unexpected sequence number. [expecting 7 got 6]
+          TOLAYER3: packet being lost
+
+EVENT time: 126.670853,  type: 2, fromlayer3  entity: 1
+Received packet of seq 7
+
+EVENT time: 128.288635,  type: 2, fromlayer3  entity: 0
+[Ack 6] Acknum is within the window [window size 2](6,7,)
+[Ack 6] Stopping timer after ack
+[Ack 6] Starting timer after ack for 7 [window size 1](7,)
+
+EVENT time: 131.670853,  type: 0, timerinterrupt   entity: 1
+Sending cumulative ack 7
+          TOLAYER3: packet being corrupted
+
+EVENT time: 138.000000,  type: 0, timerinterrupt   entity: 0
+[Seq 7] Time interrupted, retransmitting current window. [window size 1](7,)
+          TOLAYER3: packet being lost
+
+EVENT time: 141.194580,  type: 2, fromlayer3  entity: 0
+[Ack 7] Packet corrupted, dropping
+
+EVENT time: 148.949860,  type: 1, fromlayer5  entity: 0
+A sending msg with seq 0 [window size : 2](7,0,)
+
+EVENT time: 150.110535,  type: 2, fromlayer3  entity: 1
+Received packet of seq 0
+
+EVENT time: 152.331009,  type: 1, fromlayer5  entity: 0
+          TOLAYER3: packet being corrupted
+A sending msg with seq 1 [window size : 3](7,0,1,)
+
+EVENT time: 153.000000,  type: 0, timerinterrupt   entity: 0
+[Seq 7] Time interrupted, retransmitting current window. [window size 3](7,0,1,)
+          TOLAYER3: packet being lost
+
+EVENT time: 155.110535,  type: 0, timerinterrupt   entity: 1
+Sending cumulative ack 0
+          TOLAYER3: packet being corrupted
+
+EVENT time: 155.634644,  type: 2, fromlayer3  entity: 1
+Checksum error.
+          TOLAYER3: packet being lost
+
+EVENT time: 157.178207,  type: 2, fromlayer3  entity: 1
+Unexpected sequence number. [expecting 1 got 7]
+
+EVENT time: 162.505325,  type: 2, fromlayer3  entity: 0
+[Ack 0] Packet corrupted, dropping
+
+EVENT time: 163.096115,  type: 2, fromlayer3  entity: 1
+Received packet of seq 1
+
+EVENT time: 167.188049,  type: 2, fromlayer3  entity: 0
+[Ack 0] Acknum is within the window [window size 3](7,0,1,)
+[Ack 0] Stopping timer after ack
+[Ack 0] Starting timer after ack for 1 [window size 1](1,)
+
+EVENT time: 168.000000,  type: 0, timerinterrupt   entity: 0
+[Seq 1] Time interrupted, retransmitting current window. [window size 1](1,)
+
+EVENT time: 168.096115,  type: 0, timerinterrupt   entity: 1
+Sending cumulative ack 1
+
+EVENT time: 170.968536,  type: 2, fromlayer3  entity: 1
+Unexpected sequence number. [expecting 2 got 1]
+          TOLAYER3: packet being corrupted
+
+EVENT time: 174.250778,  type: 2, fromlayer3  entity: 0
+[Ack 1] Acknum is within the window [window size 1](1,)
+[Ack 1] Stopping timer after ack
+
+EVENT time: 175.473495,  type: 1, fromlayer5  entity: 0
+A sending msg with seq 2 [window size : 1](2,)
+
+EVENT time: 182.402176,  type: 2, fromlayer3  entity: 1
+Received packet of seq 2
+
+EVENT time: 182.912323,  type: 2, fromlayer3  entity: 0
+[Ack 1] Packet corrupted, dropping
+
+EVENT time: 187.402176,  type: 0, timerinterrupt   entity: 1
+Sending cumulative ack 2
+          TOLAYER3: packet being lost
+
+EVENT time: 190.473495,  type: 0, timerinterrupt   entity: 0
+[Seq 2] Time interrupted, retransmitting current window. [window size 1](2,)
+          TOLAYER3: packet being lost
+
+EVENT time: 191.270493,  type: 1, fromlayer5  entity: 0
+A sending msg with seq 3 [window size : 2](2,3,)
+
+EVENT time: 197.506180,  type: 2, fromlayer3  entity: 1
+Received packet of seq 3
+
+EVENT time: 202.506180,  type: 0, timerinterrupt   entity: 1
+Sending cumulative ack 3
+          TOLAYER3: packet being lost
+
+EVENT time: 205.473495,  type: 0, timerinterrupt   entity: 0
+[Seq 2] Time interrupted, retransmitting current window. [window size 2](2,3,)
+
+EVENT time: 209.428360,  type: 2, fromlayer3  entity: 1
+Unexpected sequence number. [expecting 4 got 2]
+
+EVENT time: 210.771423,  type: 2, fromlayer3  entity: 0
+[Ack 3] Acknum is within the window [window size 2](2,3,)
+[Ack 3] Stopping timer after ack
+
+EVENT time: 211.375687,  type: 2, fromlayer3  entity: 1
+Unexpected sequence number. [expecting 4 got 3]
+
+EVENT time: 212.425400,  type: 2, fromlayer3  entity: 0
+Ignoring ack 3 as window size 0
+
+EVENT time: 213.493759,  type: 1, fromlayer5  entity: 0
+A sending msg with seq 4 [window size : 1](4,)
+
+EVENT time: 214.597000,  type: 1, fromlayer5  entity: 0
+          TOLAYER3: packet being lost
+A sending msg with seq 5 [window size : 2](4,5,)
+
+EVENT time: 217.578812,  type: 2, fromlayer3  entity: 1
+Received packet of seq 4
+
+EVENT time: 222.578812,  type: 0, timerinterrupt   entity: 1
+Sending cumulative ack 4
+
+EVENT time: 227.255768,  type: 2, fromlayer3  entity: 0
+[Ack 4] Acknum is within the window [window size 2](4,5,)
+[Ack 4] Stopping timer after ack
+[Ack 4] Starting timer after ack for 5 [window size 1](5,)
+
+EVENT time: 229.000000,  type: 0, timerinterrupt   entity: 0
+[Seq 5] Time interrupted, retransmitting current window. [window size 1](5,)
+
+EVENT time: 232.738419,  type: 2, fromlayer3  entity: 1
+Received packet of seq 5
+
+EVENT time: 237.738419,  type: 0, timerinterrupt   entity: 1
+Sending cumulative ack 5
+
+EVENT time: 243.008514,  type: 1, fromlayer5  entity: 0
+A sending msg with seq 6 [window size : 2](5,6,)
+
+EVENT time: 244.000000,  type: 0, timerinterrupt   entity: 0
+[Seq 5] Time interrupted, retransmitting current window. [window size 2](5,6,)
+          TOLAYER3: packet being corrupted
+
+EVENT time: 244.616074,  type: 2, fromlayer3  entity: 1
+Received packet of seq 6
+
+EVENT time: 247.537643,  type: 2, fromlayer3  entity: 0
+[Ack 5] Acknum is within the window [window size 2](5,6,)
+[Ack 5] Stopping timer after ack
+[Ack 5] Starting timer after ack for 6 [window size 1](6,)
+
+EVENT time: 249.232056,  type: 2, fromlayer3  entity: 1
+Checksum error.
+
+EVENT time: 249.616074,  type: 0, timerinterrupt   entity: 1
+Sending cumulative ack 6
+
+EVENT time: 250.596268,  type: 2, fromlayer3  entity: 1
+Unexpected sequence number. [expecting 7 got 6]
+          TOLAYER3: packet being lost
+
+EVENT time: 253.768661,  type: 2, fromlayer3  entity: 0
+[Ack 6] Acknum is within the window [window size 1](6,)
+[Ack 6] Stopping timer after ack
+
+EVENT time: 262.925995,  type: 2, fromlayer3  entity: 0
+Ignoring ack 6 as window size 0
+
+EVENT time: 272.793365,  type: 1, fromlayer5  entity: 0
+A sending msg with seq 7 [window size : 1](7,)
+
+EVENT time: 277.752930,  type: 1, fromlayer5  entity: 0
+A sending msg with seq 0 [window size : 2](7,0,)
+
+EVENT time: 282.381927,  type: 2, fromlayer3  entity: 1
+Received packet of seq 7
+
+EVENT time: 285.092834,  type: 2, fromlayer3  entity: 1
+Received packet of seq 0
+
+EVENT time: 287.381927,  type: 0, timerinterrupt   entity: 1
+Sending cumulative ack 0
+
+EVENT time: 287.793365,  type: 0, timerinterrupt   entity: 0
+[Seq 7] Time interrupted, retransmitting current window. [window size 2](7,0,)
+          TOLAYER3: packet being lost
+
+EVENT time: 290.675934,  type: 2, fromlayer3  entity: 0
+[Ack 0] Acknum is within the window [window size 2](7,0,)
+[Ack 0] Stopping timer after ack
+
+EVENT time: 291.615570,  type: 2, fromlayer3  entity: 1
+Unexpected sequence number. [expecting 1 got 0]
+
+EVENT time: 298.437408,  type: 2, fromlayer3  entity: 0
+Ignoring ack 0 as window size 0
+
+EVENT time: 301.046478,  type: 1, fromlayer5  entity: 0
+          TOLAYER3: packet being lost
+A sending msg with seq 1 [window size : 1](1,)
+
+EVENT time: 316.046478,  type: 0, timerinterrupt   entity: 0
+[Seq 1] Time interrupted, retransmitting current window. [window size 1](1,)
+          TOLAYER3: packet being lost
+
+EVENT time: 316.122925,  type: 1, fromlayer5  entity: 0
+          TOLAYER3: packet being corrupted
+A sending msg with seq 2 [window size : 2](1,2,)
+
+EVENT time: 321.261017,  type: 1, fromlayer5  entity: 0
+A sending msg with seq 3 [window size : 3](1,2,3,)
+
+EVENT time: 324.451294,  type: 2, fromlayer3  entity: 1
+Checksum error.
+
+EVENT time: 330.801514,  type: 2, fromlayer3  entity: 1
+Unexpected sequence number. [expecting 1 got 3]
+          TOLAYER3: packet being corrupted
+
+EVENT time: 331.046478,  type: 0, timerinterrupt   entity: 0
+[Seq 1] Time interrupted, retransmitting current window. [window size 3](1,2,3,)
+          TOLAYER3: packet being lost
+          TOLAYER3: packet being lost
+
+EVENT time: 333.839874,  type: 2, fromlayer3  entity: 0
+[Ack 0] Duplicate ack found, retransmitting current window. [window size 3](1,2,3,)
+          TOLAYER3: packet being lost
+          TOLAYER3: packet being lost
+
+EVENT time: 337.869690,  type: 2, fromlayer3  entity: 1
+Unexpected sequence number. [expecting 1 got 2]
+
+EVENT time: 342.759613,  type: 2, fromlayer3  entity: 0
+[Ack 0] Packet corrupted, dropping
+
+EVENT time: 343.728821,  type: 2, fromlayer3  entity: 1
+Unexpected sequence number. [expecting 1 got 2]
+
+EVENT time: 347.363251,  type: 2, fromlayer3  entity: 0
+[Ack 0] Duplicate ack found, retransmitting current window. [window size 3](1,2,3,)
+          TOLAYER3: packet being lost
+          TOLAYER3: packet being lost
+
+EVENT time: 349.736023,  type: 2, fromlayer3  entity: 0
+[Ack 0] Duplicate ack found, retransmitting current window. [window size 3](1,2,3,)
+          TOLAYER3: packet being corrupted
+          TOLAYER3: packet being corrupted
+          TOLAYER3: packet being corrupted
+
+EVENT time: 350.666870,  type: 2, fromlayer3  entity: 1
+Unexpected sequence number. [expecting 1 got 3]
+
+EVENT time: 353.145111,  type: 2, fromlayer3  entity: 0
+[Ack 0] Duplicate ack found, retransmitting current window. [window size 3](1,2,3,)
+
+EVENT time: 358.893341,  type: 2, fromlayer3  entity: 1
+Checksum error.
+
+EVENT time: 362.327148,  type: 2, fromlayer3  entity: 1
+Checksum error.
+
+EVENT time: 367.247528,  type: 2, fromlayer3  entity: 0
+[Ack 0] Duplicate ack found, retransmitting current window. [window size 3](1,2,3,)
+          TOLAYER3: packet being corrupted
+
+EVENT time: 369.496979,  type: 2, fromlayer3  entity: 1
+Checksum error.
+          TOLAYER3: packet being corrupted
+
+EVENT time: 371.389435,  type: 2, fromlayer3  entity: 0
+[Ack 0] Duplicate ack found, retransmitting current window. [window size 3](1,2,3,)
+
+EVENT time: 372.088135,  type: 2, fromlayer3  entity: 1
+Received packet of seq 1
+
+EVENT time: 374.251343,  type: 2, fromlayer3  entity: 1
+Received packet of seq 2
+
+EVENT time: 374.272827,  type: 2, fromlayer3  entity: 0
+[Ack 0] Packet corrupted, dropping
+
+EVENT time: 377.088135,  type: 0, timerinterrupt   entity: 1
+Sending cumulative ack 2
+          TOLAYER3: packet being lost
+
+EVENT time: 381.806824,  type: 2, fromlayer3  entity: 1
+Received packet of seq 3
+
+EVENT time: 386.051727,  type: 2, fromlayer3  entity: 1
+Unexpected sequence number. [expecting 4 got 1]
+          TOLAYER3: packet being lost
+
+EVENT time: 386.389435,  type: 0, timerinterrupt   entity: 0
+[Seq 1] Time interrupted, retransmitting current window. [window size 3](1,2,3,)
+          TOLAYER3: packet being corrupted
+          TOLAYER3: packet being lost
+          TOLAYER3: packet being corrupted
+
+EVENT time: 386.806824,  type: 0, timerinterrupt   entity: 1
+Sending cumulative ack 3
+          TOLAYER3: packet being corrupted
+
+EVENT time: 394.375977,  type: 2, fromlayer3  entity: 1
+Unexpected sequence number. [expecting 4 got 2]
+
+EVENT time: 395.118164,  type: 2, fromlayer3  entity: 0
+[Ack 999999] Packet corrupted, dropping
+
+EVENT time: 397.732391,  type: 2, fromlayer3  entity: 0
+[Ack 3] Acknum is within the window [window size 3](1,2,3,)
+[Ack 3] Stopping timer after ack
+
+EVENT time: 400.701477,  type: 2, fromlayer3  entity: 1
+Checksum error.
+          TOLAYER3: packet being lost
+
+EVENT time: 404.249573,  type: 2, fromlayer3  entity: 1
+Unexpected sequence number. [expecting 4 got 1]
+
+EVENT time: 410.337494,  type: 2, fromlayer3  entity: 0
+Ignoring ack 3 as window size 0
+
+EVENT time: 410.998901,  type: 2, fromlayer3  entity: 1
+Unexpected sequence number. [expecting 4 got 2]
+
+EVENT time: 420.222961,  type: 2, fromlayer3  entity: 1
+Unexpected sequence number. [expecting 4 got 3]
+          TOLAYER3: packet being lost
+
+EVENT time: 420.246033,  type: 2, fromlayer3  entity: 0
+Ignoring ack 3 as window size 0
+
+EVENT time: 423.996826,  type: 2, fromlayer3  entity: 1
+Checksum error.
+
+EVENT time: 426.251495,  type: 2, fromlayer3  entity: 1
+Checksum error.
+
+EVENT time: 428.573547,  type: 2, fromlayer3  entity: 0
+Ignoring ack 3 as window size 0
+
+EVENT time: 435.133362,  type: 2, fromlayer3  entity: 0
+Ignoring ack 3 as window size 0
+ Simulator terminated at time 435.133362
+ after sending 20 msgs from layer5
