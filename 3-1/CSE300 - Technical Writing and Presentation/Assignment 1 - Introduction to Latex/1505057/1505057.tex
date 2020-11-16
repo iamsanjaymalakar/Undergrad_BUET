@@ -1,0 +1,185 @@
+\documentclass{article}
+
+
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{amsfonts}
+
+
+
+\begin{document}
+        
+        \begin{center}
+            
+            \Huge
+            CSE300\textunderscore Assignment1\\
+            Introduction to \LaTeX \\
+            \textbf{Bitcoin\\}
+            
+            \vspace{0.5cm}
+            
+            \LARGE
+            Sanjay Malakar\\
+            Student Id : 1505057\\
+            
+            \vspace{7cm}
+            
+            \begin{figure}[h]
+                \centering
+                \includegraphics[width = 0.2\textwidth]{Images/buetLogo.png}
+            \end{figure}
+            
+             \Large
+            Department of Computer Science and Engineering\\
+            Bangladesh University of Engineering and Technology\\
+            (BUET)\\
+            Dhaka 1000\\
+            \today
+            
+        \end{center}
+        
+\newpage
+
+    \tableofcontents
+    
+\newpage
+
+\section{Introduction}
+
+\subsection{What is Bitcoin?}
+With the Bitcoin price so volatile everyone is curious. Bitcoin, the category creator of \textbf{blockchain technology}, is the \textbf{World Wide Ledger} yet extremely complicated and no one definition fully encapsulates it. By analogy it is like being able to send a gold coin via email. It is a consensus network that enables a new payment system and a completely digital money.
+\newline
+It is the first decentralized peer-to-peer\textbf{\textit{(P2P)}} payment network that is powered by its users with no central authority or middlemen. Bitcoin was the first practical implementation and is currently the most prominent triple entry bookkeeping system in existence.
+
+\subsection{Who created Bitcoin?}
+The first Bitcoin specification and proof of concept was published in 2009 by an unknown individual under the pseudonym Satoshi Nakamoto who revealed little about himself and left the project in late 2010. The Bitcoin community has since grown exponentially.
+\newline
+Satoshi's anonymity often raises unjustified concerns because of a misunderstanding of Bitcoin's open-source nature. Everyone has access to all of the source code all of the time and any developer can review or modify the software code. As such, the identity of Bitcoin's inventor is probably as relevant today as the identity of the person who invented paper.
+
+
+
+
+
+
+\section{How does Bitcoin work?}
+From a user perspective, Bitcoin is nothing more than a mobile app or computer program that provides a personal Bitcoin wallet and enables a user to send and receive bitcoins.
+
+Behind the scenes, the Bitcoin network is sharing a massive public ledger called the "block chain". This ledger contains every transaction ever processed which enables a user's computer to verify the validity of each transaction. The authenticity of each transaction is protected by digital signatures corresponding to the sending addresses therefore allowing all users to have full control over sending bitcoins.
+\subsection{What is block chain?}
+A blockchain is a digitized, decentralized, public ledger of all cryptocurrency transactions. Constantly growing as ‘completed’ blocks (the most recent transactions) are recorded and added to it in chronological order, it allows market participants to keep track of digital currency transactions without central recordkeeping. Each node (a computer connected to the network) gets a copy of the blockchain, which is downloaded automatically.
+
+\newpage
+
+    \begin{figure}[h]
+         \centering
+        \includegraphics[width = .8\textwidth]{Images/blockchain.jpg}
+        \caption{How bitcoin blockchain work}
+    \end{figure}
+    
+\section{Acquiring and owning bitcoins}
+
+    \subsection{Acquiring}
+        Some most popular ways are : 
+        \begin{description}
+            \item[Buy on an Exchange]Many marketplaces called “bitcoin exchanges” allow people to buy or sell bitcoins using different currencies.
+            \item[Transfers] People can send bitcoins to each other using mobile apps or their computers.
+            \item[Mining] People compete to “mine” bitcoins using computers to solve complex math puzzles.
+        \end{description}
+        
+    \subsection{Owning}    
+      Bitcoins are stored in a “digital wallet,” which exists either in the cloud or on a user’s computer. The wallet is a kind of virtual bank account that allows users to send or receive bitcoins, pay for goods or save their money.
+        \begin{enumerate}
+            \item Wallet in cloud
+            \item Wallet on computer
+        \end{enumerate}
+        
+\newpage
+
+\section{Bitcoin and the Law}
+Mostly all governments will follow regulations such as Canada national law on digital currencies but always somewhere in the world criminals will find financial products free of any intervention in the e-currency, government-backed or otherwise.
+    \begin{itemize}
+        \item Bitcoin and Taxes :  Bitcoin can be considered “money” as it fulfils the functions of money but it is doubtful that Bitcoin would pass as “money” in many Countries under the Nation-al Currency Law.
+        \item National digital currency law : Parliament of Canada approved this June the world’s first national law on digital currencies in order check all transactions under national anti-money laundering law.
+    \end{itemize}
+    
+    \begin{figure}[h]
+        \centering
+        \includegraphics[width = 0.8\textwidth]{Images/chart.png}
+        \caption{Bitcoins price over years}
+    \end{figure}
+    
+\section{The Mathematics Behind Bitcoin}
+Why should we trust Bitcoin :
+    \subsection{First Result}
+        \begin{itemize}
+            \item Underestimation of double spend success probability
+            \item \textbf{Existence of closed form formulas}
+            \item \textcolor{red}{Mathematical foundation of bitcoin}
+            \item Bitcoin and gamma functions
+        \end{itemize}
+\newpage
+\textbf{Notation 1. } \textit{Let ~ $ 0 < q < \frac{1}{2} (resp.~ p=1-q) $}, the relative hash power of the group of attackers (resp. of honest miners).
+\newline
+\newline
+\newline
+\textbf{Theorem 2. } \textit{After z blocks have been validated by honest miners, the probability of success of the attackers is
+        \textcolor{red}{$$ P(z)=I_{4pq} \Big( z,\frac{1}{2} \Big) $$}
+    where $I_x(a, b)$ is the \textcolor{red}{ regularized imcomplete beta function}}
+    \textit{
+        \begin{equation}
+            I_x(a,b) := \frac{\Gamma(a+b)}{\Gamma(a)\Gamma(b)}
+        \int_{0}^{x} t^{a-1}(1-t)^{b-1}dt 
+        \end{equation} 
+    }
+\newline
+\newline
+\textbf{Corolarry 3.} \textit{~Let $s=4pq<1$. When $z\to \infty$, we have
+    \begin{equation}
+        \textcolor{red}{
+            P(z) ~ \sim ~ \frac{s^z}{\sqrt{\pi(1-z)s}}
+        }
+    \end{equation}
+}
+
+\subsection{Other results}
+Given $z \in \mathbb{N}$,~ block generation time t for mining z block(s) is publicly known.
+\newline
+\newline
+\newline
+\textbf{Defination 4.}~\textit{We denote by P(z,t) the probability of success of a double spend attack when z blocks have been validated within a period of time t.}
+\newline
+\newline
+What we'll obtain also:
+
+\begin{enumerate}
+        \item \textcolor{red}{Closed form formula for $P(z,t)$}
+        
+        \item \textcolor{red}{Asymtotics formulas for $P_{SN}(z)$ and $P(z,t)$}
+        
+        \item \textcolor{red}{Explicit rank $z_0$ such that $P(z)<P_{SN}(z)$}
+\end{enumerate}
+
+\vspace{1.2cm}
+In particular,
+
+        \begin{equation}
+        \textcolor{red}{
+            P_{SN}(z) ~ \sim ~ \frac{e^{-z\big(\frac{q}{p}-1-\ln\frac{q}{p}\big)}}{2}
+            }
+        \end{equation}
+ 
+\newpage
+
+
+\section{What does future hold for Bitcoin?} 
+So what’s next for Bitcoin? As outlined previously, it has many advantages and for this reason it will remain relevant as a currency. The vast majority of BTC transactions by volume are made in China so the two will remain interlinked.
+\newline\newline
+We see the biggest risk to Bitcoin being its substitution and/or parallel use by other crypto currencies. Bitcoin die-hard fans claim that this is never going to be an issue since Bitcoin was the pioneer and as such enjoys first-mover privilege. This argument is probably flawed because although the BTC is used for payments, this is only a relatively small \% of all Bitcoins. One of its primary uses is being a store of value and for this reason other crypto currencies can always step in and enjoy similar status if aggregate demand requires it.
+\newline\newline
+Is Bitcoin simply a 21st century version of gold, only without the storage issues? Or is it just a short-lived popular fad that may soon evolve into something quite different? Only time will tell. The only certainty is that its price will remain very volatile in the future.
+
+\vspace*{\fill}
+\centering
+The End\\ \copyright~ Sanjay Malakar
+
+\end{document}

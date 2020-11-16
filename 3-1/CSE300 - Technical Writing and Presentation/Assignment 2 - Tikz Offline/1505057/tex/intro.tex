@@ -1,0 +1,61 @@
+In this document, we present the very famous theorem in mathematics: \textit{Pythagorean
+theorem}, which is stated as follows.
+\begin{theorem}[Pythagorean theorem]
+The square of the hypotenuse (the
+side opposite the right angle) is equal to the sum of the squares of the other two
+sides.
+\end{theorem}
+
+~~~Numerous mathematicians proposed various proofs to the theorem. The
+theorem was long known even before the time of Pythagoras. Pythagoras was
+the first to provide with a sound proof. The proof that Pythagoras gave was
+by \textit{rearrangement}. Even the great Albert Einstein also proved the theorem
+without rearrangement, rather by using dissection. Figure 1 shows the visual
+representation of the theorem.
+\begin{figure}[h]
+    \centering
+    \begin{tikzpicture}[scale=.355]       
+        \path [fill=skyblue] (0,0) rectangle (17,17);
+        \path [fill=vio] (0+7,0+9.5) rectangle (3+7,-3+9.5);
+        \node [darkvio,below] at (8.5,9.5) {$a$};
+        \path [fill=darkpink] (3+7,0+9.5) rectangle (3+4+7,0+4+9.5);
+        \node [darkvio,right] at (10,11.5) {$b$};
+        \path [fill=cyan,rotate around={-37:(0+7,0+9.5)}] (0+7,0+9.5) rectangle (-5+7,5+9.5);
+        \node [darkvio] at (8,12) {$c$};
+        \draw [thick,cyan] (10,10) -- (9.5,10) -- (9.5,9.5);
+        \draw [tribor,thick] (0+7,0+9.5) -- (3+7,0+9.5) -- (3+7,3.92+9.5) -- (0+7,0+9.5);
+        \path [fill=cyan](1,.5) rectangle (6,5.5);
+        \node [darkvio] at (3.5,3) {$c^2$};
+        \node [darkvio,right] at (6,3) {\textbf{=}};
+        \path [fill=vio](7.5,1.5) rectangle (10.5,4.5);
+        \node [darkvio] at (9,3) {$a^2$};
+        \node [darkvio,right] at (10.5,3) {\textbf{+}};
+        \path [fill=darkpink](12,1) rectangle (16,5);
+        \node [darkvio] at (14,3) {$b^2$};
+    \end{tikzpicture}
+    \caption{Visual representation of the famous Pythagorean theorem.}
+    \label{fig:fig1}
+\end{figure}
+\newpage
+\begin{figure}[h]
+    \centering
+    \begin{tikzpicture}[scale=.23]
+        \draw [darkblue,thick] (10,22) -- (10,-2);
+        \draw [darkblue,thick] (-2,10) -- (22,10);
+        \draw [lightblue,thick] (10,14) -- (19.1,14);
+        \draw [thick] (19.1,14) -- (22,14);
+        \draw [lightblue,thick] (19.1,10) -- (19.1,14);
+        \draw [thick] (19.1,14) -- (19.1,16.5);
+        \node [right] at (13.5,11) {$\theta$};
+        \node [red,rotate=25] at (13.5,12.7) {$r=1$};
+        \draw [lightblue,thick] (13.5,10) to[out=70,in=-30] (13,11.4);
+        \draw [red,thick] (10,10) -- (19.1,14);
+        \draw [darkblue,very thick,<->] (21,10) -- (21,14);
+        \node [right] at (21,12) {$sin\theta$};
+        \draw [darkblue,very thick,<->] (10,16) -- (19.1,16);
+        \node [above] at (13.5,16) {$cos\theta$};
+        \draw [darkblue,ultra thick] (10,10) circle [radius=10];
+    \end{tikzpicture}
+    \caption{Alternate representation of Pythagorean theorem.}
+    \label{fig:fig2}
+\end{figure}
