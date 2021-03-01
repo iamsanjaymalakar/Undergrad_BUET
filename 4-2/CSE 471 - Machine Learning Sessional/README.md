@@ -16,3 +16,17 @@ Stack Exchange is a very popular Q&A (Question-and-Answer) based website. We wan
 - [Implementation](Assignment%202%20-%20Text%20Classification/1505057/1505057_Code.py)
 - [Results](Assignment%202%20-%20Text%20Classification/1505057/1505057_Report.pdf)
 
+## Assignment 3: Dimensionality  Reduction using Principal  Component Analysis and Clustering  using  Expectation-maximization  Algorithm
+
+Principal  component  analysis  (PCA)  and  the  expectation-maximization  (EM) algorithm  are  two of  the  most  widely used unsupervised methods  in  machinelearning. In this assignment, you will use PCA for dimensionality reductionand  apply the EM algorithm for Gaussian mixture model to cluster  the datawith dimensionality reduced.
+
+- [Description](Assignment%203%20-%20Dimensionality%20Reduction%20using%20PCA%20and%20Clustering%20using%20EM%20Algorithm/CSE472_%20Assignment%203.pdf)
+- [Implementation](Assignment%203%20-%20Dimensionality%20Reduction%20using%20PCA%20and%20Clustering%20using%20EM%20Algorithm/1505057/1505057.py)
+- [Results](Assignment%203%20-%20Dimensionality%20Reduction%20using%20PCA%20and%20Clustering%20using%20EM%20Algorithm/1505057/1505057.pdf)
+
+## Project : Recomnedation System
+
+The purpose of a recomnedation system is to suggest relevant items to users. This project aims to build a movie recommendation mechanism within Netflix.
+
+- [Notebook](Project%20-%20Recommendation%20System/notebook.ipynb)
+- [Notebook as PDF](Project%20-%20Recommendation%20System/notebook.pdf)
