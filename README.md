@@ -11,9 +11,9 @@
 
 Implemanting transposition cipher and DES.
 
-- [Description](TC%20and%20DES/Offline%201/Offline1-documentation.docx)
-- [TC Implementation](TC%20and%20DES/tc.cpp)
-- [DES Implementation](TC%20and%20DES/des.cpp)
+- [Description](4-1/CSE406%20-%20Computer%20Security%20Sessional/TC%20and%20DES/Offline%201/Offline1-documentation.docx)
+- [TC Implementation](4-1/CSE406%20-%20Computer%20Security%20Sessional/TC%20and%20DES/tc.cpp)
+- [DES Implementation](4-1/CSE406%20-%20Computer%20Security%20Sessional/TC%20and%20DES/des.cpp)
 
 ## Project : DNS Cache Poisoning
 
@@ -36,11 +36,11 @@ single physical machine.
 
 ### Report
 
-More details about the attack [here](DNS%20Cache%20Poisoning/report.pdf).
+More details about the attack [here](4-1/CSE406%20-%20Computer%20Security%20Sessional/DNS%20Cache%20Poisoning/report.pdf).
 
 ### Implementation
 
-[C implementation.](DNS%20Cache%20Poisoning/dnsattack.c)
+[C implementation.](4-1/CSE406%20-%20Computer%20Security%20Sessional/DNS%20Cache%20Poisoning/dnsattack.c)
 
 ### Video
 
@@ -56,9 +56,9 @@ There are three tasks each carrying the same weight.
 2. Sphere to/from Cube (1.exe)
 3. Wheel (2.exe)
 
-- [Description](Assignment%201/Read%20Me.pdf)
-- [Task 1 and 2 Code](Assignment%201/1.cpp)
-- [Task 3 Code](Assignment%201/2.cpp)
+- [Description](4-1/CSE410%20-%20%20Computer%20Graphics%20Sessional/Assignment%201/Read%20Me.pdf)
+- [Task 1 and 2 Code](4-1/CSE410%20-%20%20Computer%20Graphics%20Sessional/Assignment%201/1.cpp)
+- [Task 3 Code](4-1/CSE410%20-%20%20Computer%20Graphics%20Sessional/Assignment%201/2.cpp)
 
 ## Assignment 2
 
@@ -66,15 +66,15 @@ There are three tasks each carrying the same weight.
 2. Stage 2: View Transformation
 3. Stage 3: Projection Transformation
 
-- [Description](Assignment%202/docs/Assignment%202%20Specification.pdf)
-- [Implementation](Assignment%203/1505057.cpp)
+- [Description](4-1/CSE410%20-%20%20Computer%20Graphics%20Sessional/Assignment%202/docs/Assignment%202%20Specification.pdf)
+- [Implementation](4-1/CSE410%20-%20%20Computer%20Graphics%20Sessional/Assignment%203/1505057.cpp)
 
 ## Assignment 3
 
 Rendering a scene using ray casting.
 
-- [Description](Assignment%203/Assignment%203%20specification.pdf)
-- [Implementation](Assignment%203/1505057.cpp)
+- [Description](4-1/CSE410%20-%20%20Computer%20Graphics%20Sessional/Assignment%203/Assignment%203%20specification.pdf)
+- [Implementation](4-1/CSE410%20-%20%20Computer%20Graphics%20Sessional/Assignment%203/1505057.cpp)
 
 # Level 4 Term 2
 
