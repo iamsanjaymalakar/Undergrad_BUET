@@ -12,7 +12,7 @@ Assignment on interprocess communication.
 - [Description](IPC/IPC%20Offline.pdf)
 - [Implementation](IPC/procon.cpp)
 
-## Assignment 3 : xv6 Socker API
+## Assignment 3 : xv6 Socket API
 
 Implement Socket API (local loopback only) in xv6.
 

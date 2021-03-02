@@ -20,7 +20,7 @@ Assignment on interprocess communication.
 - [Description](3-2/CSE314%20-%20Operating%20System%20Sessional/IPC/IPC%20Offline.pdf)
 - [Implementation](3-2/CSE314%20-%20Operating%20System%20Sessional/IPC/procon.cpp)
 
-## Assignment 3 : xv6 Socker API
+## Assignment 3 : xv6 Socket API
 
 Implement Socket API (local loopback only) in xv6.
 
