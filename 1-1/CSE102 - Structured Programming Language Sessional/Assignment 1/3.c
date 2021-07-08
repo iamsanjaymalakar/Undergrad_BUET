@@ -1,3 +1,5 @@
+// what was i smoking lol
+
 #include<stdio.h>
 #include<limits.h>
 

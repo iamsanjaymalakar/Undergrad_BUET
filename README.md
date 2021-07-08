@@ -1,8 +1,27 @@
 # UndergradOfflines
 
-## Level 1 Term 1 
+# Level 1 Term 1
 
-## Level 2 Term 2
+# Structured Programming Language Sessional CSE102
+
+## Assignment 1 : Basic Problem Solving
+
+- [Description for problem 1 & 2](1-1/CSE102%20-%20Structured%20Programming%20Language%20Sessional/Assignment%201/offline_All.pdf)
+- [Description for problem 3](1-1/CSE102%20-%20Structured%20Programming%20Language%20Sessional/Assignment%201/offline_A2.pdf)
+- [Solution](1-1/CSE102%20-%20Structured%20Programming%20Language%20Sessional/Assignment%201)
+
+## iGraphics Assignment
+
+Digital clock using iGraphics.
+
+- [Implementation](1-1/CSE102%20-%20Structured%20Programming%20Language%20Sessional/Digial%20Clock)
+
+## Project : Tic-tac-toe
+Popular Tick-Tac-Toe game created in C++ using iGraphics library(A Wrapper For OpenGL in 2D).
+
+- [Implementation](1-1/CSE102%20-%20Structured%20Programming%20Language%20Sessional/Tick%20Tack%20Toe/)
+
+# Level 2 Term 2
 
 # Level 3 Term 1
 
