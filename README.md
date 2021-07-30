@@ -27,8 +27,8 @@ Popular Tick-Tac-Toe game created in C++ using iGraphics library(A Wrapper For O
 
 ## Assignment on Inheritance
 
-- [Problem description](1-2/CSE108%20-%20Object%20Oriented%20Programming%20Language%20Sessional/Inheritence/problem.txt)
-- [Implementation](1-2/CSE108%20-%20Object%20Oriented%20Programming%20Language%20Sessional/Inheritence/1505057/main.cpp)
+- [Problem description](1-2/CSE108%20-%20Object%20Oriented%20Programming%20Language%20Sessional/Inheritance/problem.txt)
+- [Implementation](1-2/CSE108%20-%20Object%20Oriented%20Programming%20Language%20Sessional/Inheritance/1505057/main.cpp)
 
 ## Assignment on Threading
 
@@ -45,7 +45,7 @@ Popular Tick-Tac-Toe game created in C++ using iGraphics library(A Wrapper For O
 A JavaFX application where patients can take and manage appointments from the hospital.
 
 - [Problem description](1-2/CSE108%20-%20Object%20Oriented%20Programming%20Language%20Sessional/JavaFX%20Project/readme)
-- [Implementation](/1-2/CSE108%20-%20Object%20Oriented%20Programming%20Language%20Sessional/Projcet%20-%20Hospital%20Management%20System/)
+- [Implementation](1-2/CSE108%20-%20Object%20Oriented%20Programming%20Language%20Sessional/Projcet%20-%20Hospital%20Management%20System/)
 
 # Level 2 Term 2
 
@@ -183,7 +183,7 @@ The decision tree is one of the models extensively used in classification proble
 
 ## Assignment 2: Text Classification
 
-Stack Exchange is a very popular Q&A (Question-and-Answer) based website. We want to analyze some archived data of Stack Exchange using text classification.  The link to stack exchange archive is <https://archive.org/details/stackexchange>. The goal of text classification is to identify the topic for a piece of text (newsarticle, web-blog, etc.).  Text classification has obvious utility in the age of information overload, and it has become very popular for applied machine learning algorithms. In this project, you will implement k-nearest neighbor and NaiveBayes, apply these to text classification on Stack Exchange sample data, and compare the performances of these techniques.
+Stack Exchange is a very popular Q&A (Question-and-Answer) based website. We want to analyze some archived data of Stack Exchange using text classification.  The link to the stack exchange archive is <https://archive.org/details/stackexchange>. The goal of text classification is to identify the topic for a piece of text (news article, web-blog, etc.).  Text classification has obvious utility in the age of information overload, and it has become very popular for applied machine learning algorithms. In this project, you will implement k-nearest neighbor and NaiveBayes, use these to text classification on Stack Exchange sample data, and compare the performances of these techniques.
 
 - [Description](4-2/CSE%20471%20-%20Machine%20Learning%20Sessional/Assignment%202%20-%20Text%20Classification/Assignment_2_Version2.pdf)
 - [Implementation](4-2/CSE%20471%20-%20Machine%20Learning%20Sessional/Assignment%202%20-%20Text%20Classification/1505057/1505057_Code.py)
@@ -191,7 +191,7 @@ Stack Exchange is a very popular Q&A (Question-and-Answer) based website. We wan
 
 ## Assignment 3: Dimensionality  Reduction using Principal  Component Analysis and Clustering  using  Expectation-maximization  Algorithm
 
-Principal component analysis (PCA) and the expectation-maximization  (EM) algorithm are two of the most widely used unsupervised methods in machine learning. In this assignment, you will use PCA for dimensionality reduction and apply the EM algorithm for Gaussian mixture model to cluster the data with dimensionality reduced.
+Principal component analysis (PCA) and the expectation-maximization  (EM) algorithm are two of the most widely used unsupervised methods in machine learning. In this assignment, you will use PCA for dimensionality reduction and apply the EM algorithm for Gaussian mixture model to cluster the data with dimensionality reduction.
 
 - [Description](4-2/CSE%20471%20-%20Machine%20Learning%20Sessional/Assignment%203%20-%20Dimensionality%20Reduction%20using%20PCA%20and%20Clustering%20using%20EM%20Algorithm/CSE472_%20Assignment%203.pdf)
 - [Implementation](4-2/CSE%20471%20-%20Machine%20Learning%20Sessional/Assignment%203%20-%20Dimensionality%20Reduction%20using%20PCA%20and%20Clustering%20using%20EM%20Algorithm/1505057/1505057.py)
