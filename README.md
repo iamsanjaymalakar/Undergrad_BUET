@@ -88,7 +88,7 @@ Huffman coding and minimizing waiting times.
 - [Description](2-1/CSE218%20-%20Numerical%20Methods/Offline%201%20-%20Secant/Offline_A2.docx)
 - [Implementation](2-1/CSE218%20-%20Numerical%20Methods/Offline%201%20-%20Secant/1505057)
 
-### Assignment 2: Gauss Seidel, LU Decomposition
+### Assignment 2: Gauss-Seidel, LU Decomposition
 - [Description](2-1/CSE218%20-%20Numerical%20Methods/Offline%202%20-%20Gauss%20Seidel,%20LU%20Decomposition/A2%20offline%202.docx)
 
 
@@ -97,7 +97,7 @@ Huffman coding and minimizing waiting times.
 - [Implementation](2-1/CSE218%20-%20Numerical%20Methods/Offline%203%20-%20Golden%20Selection%20Search/1505057)
 
 
-### Assignment 4: Newton’s Divided Difference, Quadratic Splines
+### Assignment 4: Newton's Divided Difference, Quadratic Splines
 - [Description](2-1/CSE218%20-%20Numerical%20Methods/Offline%204%20-%20Newton%E2%80%99s%20Divided%20Difference,%20Quadratic%20Splines/A2%20offline%204.docx)
 - [Implementation](2-1/CSE218%20-%20Numerical%20Methods/Offline%204%20-%20Newton%E2%80%99s%20Divided%20Difference,%20Quadratic%20Splines/1505057)
 
@@ -153,7 +153,7 @@ out its own pages. To keep things simple, we will use the file system interface 
 process a file in which swapped-out memory pages are stored.
 
 - [Description](3-2/CSE314%20-%20Operating%20System%20Sessional/xv6%20Paging/xv6-assignment-3/xv6-assignment-3.pdf)
-- [Implementaion](3-2/CSE314%20-%20Operating%20System%20Sessional/xv6%20Paging/patch_xv6_Paging_1505057)
+- [Implementation](3-2/CSE314%20-%20Operating%20System%20Sessional/xv6%20Paging/patch_xv6_Paging_1505057)
 
 # Level 4 Term 1
 ## Computer Security Sessional CSE406
@@ -233,7 +233,7 @@ Rendering a scene using ray casting.
 
 ### Assignment 1: Decision Tree and AdaBoost for Classification
 
-The decision tree is one of the models extensively used in classification problems. In ensemble learning, we combine decisions from multiple weak learners to solve a classification problem. This assignment implements a decision tree classifier and uses it within AdaBoost algorithm.
+The decision tree is one of the models extensively used in classification problems. In ensemble learning, we combine decisions from multiple weak learners to solve a classification problem. This assignment implements a decision tree classifier and uses it within the AdaBoost algorithm.
 
 - [Description](4-2/CSE%20471%20-%20Machine%20Learning%20Sessional/Assignment%201%20-%20Decision%20Tree%20and%20AdaBoost%20for%20Classification/Assignment%201.pdf)
 - [Implementation](4-2/CSE%20471%20-%20Machine%20Learning%20Sessional/Assignment%201%20-%20Decision%20Tree%20and%20AdaBoost%20for%20Classification/1505057/1505057.py)
