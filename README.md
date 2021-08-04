@@ -107,6 +107,39 @@ Huffman coding and minimizing waiting times.
 - [Implementation](2-1/CSE218%20-%20Numerical%20Methods/Offline%205%20-%20Numerical%20Integral/1505057)
 # Level 2 Term 2
 
+## Data Structures and Algorithms II Sessional CSE208
+
+### Assignment 1: Minimum Spanning Trees
+- [Description](2-2/CSE208%20-%20Data%20Structures%20and%20Algorithms%20II%20Sessional/Minimum%20Spanning%20Trees/Offline_Assignment_1_MST.pdf)
+- [Implementation](2-2/CSE208%20-%20Data%20Structures%20and%20Algorithms%20II%20Sessional/Minimum%20Spanning%20Trees/1505057)
+
+### Assignment 2: Single-Source Shortest Path
+- [Description](2-2/CSE208%20-%20Data%20Structures%20and%20Algorithms%20II%20Sessional/Single-Source%20Shortest%20Path/Assignment%202%20for%20all%20section.pdf)
+- [Implementation](2-2/CSE208%20-%20Data%20Structures%20and%20Algorithms%20II%20Sessional/Single-Source%20Shortest%20Path/1505057.cpp)
+
+### Assignment 3: Dynamic Programming
+- [Description](2-2/CSE208%20-%20Data%20Structures%20and%20Algorithms%20II%20Sessional/Dynamic%20Programming/Offline_3_DP_all_sections.pdf)
+- [Implementation](2-2/CSE208%20-%20Data%20Structures%20and%20Algorithms%20II%20Sessional/Dynamic%20Programming/1505057.cpp)
+
+### Assignment 4: All Pair Shortest Path
+- [Description](2-2/CSE208%20-%20Data%20Structures%20and%20Algorithms%20II%20Sessional/All%20Pair%20Shortest%20Path/Assignment%204%20for%20all%20section.pdf)
+
+### Assignment 5: Maximum flow
+- [Description](2-2/CSE208%20-%20Data%20Structures%20and%20Algorithms%20II%20Sessional/Maximum%20flow/Offline_Assignment_5_Max_Flow%20(1).pdf)
+- [Implementation](2-2/CSE208%20-%20Data%20Structures%20and%20Algorithms%20II%20Sessional/Maximum%20flow/1505057.cpp)
+
+### Assignment 6: Hashing
+- [Description](2-2/CSE208%20-%20Data%20Structures%20and%20Algorithms%20II%20Sessional/Hashing/offline.pdf)
+- [Implementation](2-2/CSE208%20-%20Data%20Structures%20and%20Algorithms%20II%20Sessional/Hashing/1505057.cpp)
+
+### Assignment 7: Red-Black Tree
+- [Description](2-2/CSE208%20-%20Data%20Structures%20and%20Algorithms%20II%20Sessional/Advanced%20Data%20Structure%20(RBT)/Assignment%207%20for%20all%20sections.pdf)
+- [Implementation](2-2/CSE208%20-%20Data%20Structures%20and%20Algorithms%20II%20Sessional/Advanced%20Data%20Structure%20(RBT)/1505057.cpp)
+
+### Assignment 8: Branch and Bound
+- [Description](2-2/CSE208%20-%20Data%20Structures%20and%20Algorithms%20II%20Sessional/Branch%20and%20bound%20algorithms/Offline_Assignment_8_Branch_and_Bound_All_Sections.pdf)
+- [Implementation](2-2/CSE208%20-%20Data%20Structures%20and%20Algorithms%20II%20Sessional/Branch%20and%20bound%20algorithms/1505057.cpp)
+
 # Level 3 Term 1
 
 # Level 3 Term 2
@@ -249,7 +282,7 @@ Stack Exchange is a very popular Q&A (Question-and-Answer) based website. We wan
 
 ### Assignment 3: Dimensionality  Reduction using Principal  Component Analysis and Clustering  using  Expectation-maximization  Algorithm
 
-Principal component analysis (PCA) and the expectation-maximization  (EM) algorithm are two of the most widely used unsupervised methods in machine learning. In this assignment, you will use PCA for dimensionality reduction and apply the EM algorithm for Gaussian mixture model to cluster the data with dimensionality reduction.
+Principal component analysis (PCA) and the expectation-maximization  (EM) algorithm are two of the most widely used unsupervised methods in machine learning. In this assignment, you will use PCA for dimensionality reduction and apply the EM algorithm for the Gaussian mixture model to cluster the data with dimensionality reduction.
 
 - [Description](4-2/CSE%20471%20-%20Machine%20Learning%20Sessional/Assignment%203%20-%20Dimensionality%20Reduction%20using%20PCA%20and%20Clustering%20using%20EM%20Algorithm/CSE472_%20Assignment%203.pdf)
 - [Implementation](4-2/CSE%20471%20-%20Machine%20Learning%20Sessional/Assignment%203%20-%20Dimensionality%20Reduction%20using%20PCA%20and%20Clustering%20using%20EM%20Algorithm/1505057/1505057.py)
