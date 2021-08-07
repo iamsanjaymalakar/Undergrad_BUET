@@ -1,0 +1,111 @@
+CREATE OR REPLACE function wol (res in VARCHAR2)
+return varchar2 is
+begin
+if SUBSTR(res,1,1)>SUBSTR(res,3,1) then
+return 'WIN';
+ELSIF SUBSTR(res,1,1)=SUBSTR(res,3,1) then
+return 'DRAW';
+ELSE
+return 'LOSS';
+END IF;
+end;
+
+
+create or replace FUNCTION stillPresident (bid in NUMBER)
+RETURN VARCHAR IS
+    CID NUMBER;
+    SDATE DATE;
+    EDATE DATE;
+BEGIN
+    BEGIN
+
+        SELECT COMMITTEE_ID INTO CID
+        FROM COMMITTEE_BOARD
+        WHERE BMEMBER_ID=bid AND ROLE='PRESIDENT';
+    END;
+    SELECT START_DATE, END_DATE INTO SDATE, EDATE
+    FROM COMMITTEES
+    WHERE COMMITTEE_ID=CID;
+    IF SYSDATE>= SDATE AND SYSDATE<=EDATE THEN
+
+    RETURN 'YES';
+    ELSE
+    RETURN 'NO';
+    END IF;
+EXCEPTION
+    WHEN NO_DATA_FOUND THEN
+    RETURN 'ERROR';
+    WHEN OTHERS THEN
+    RETURN 'Some unknown error occurred.' ;
+END;
+
+
+
+create or replace TRIGGER Player_Update
+BEFORE UPDATE
+OF PLAYER_NAME,AGENT_NAME
+ON PLAYERS
+FOR EACH ROW
+DECLARE
+BEGIN
+:NEW.PLAYER_NAME := INITCAP(:NEW.PLAYER_NAME) ;
+:NEW.AGENT_NAME := INITCAP(:NEW.AGENT_NAME) ;
+END ;
+
+create or replace TRIGGER salaryUpdatePlayers
+BEFORE UPDATE
+ON PLAYERS
+FOR EACH ROW
+DECLARE
+    PL_NAME VARCHAR2(25);
+    PL_TYPE VARCHAR2(25);
+    PREV_SALARY NUMBER;
+    REQ_SALARY NUMBER;
+    REQ_DATE DATE;
+
+BEGIN
+
+    PL_NAME := :OLD.PLAYER_NAME;
+    PL_TYPE := 'Player';
+    PREV_SALARY := :OLD.WAGE;
+    REQ_SALARY := :NEW.WAGE;
+    INSERT INTO SALARY_UPDATE VALUES (PL_NAME,PL_TYPE,PREV_SALARY,REQ_SALARY,SYSDATE);
+    :NEW.WAGE := :OLD.WAGE;
+END ;
+
+
+/// new
+
+create or replace TRIGGER Staff_Update
+BEFORE UPDATE
+OF STAFF_NAME
+ON STAFFS
+FOR EACH ROW
+DECLARE
+BEGIN
+:NEW.STAFF_NAME := INITCAP(:NEW.STAFF_NAME) ;
+END ;
+
+
+create or replace PROCEDURE managerMatch (mid in number,w out number,d out number,l out number) is 
+c1 number;
+c2 number;
+c3 number;
+begin
+c1:=0;
+c2:=0;
+c3:=0;
+for r in (select to_char(m.MATCH_DATE,'DD-MON-YYYY'),m.VENUE,m.OPPONENT,m.TOURNAMENT_NAME,m.STAGE,m.RESULT,wol(m.RESULT) from player_team pt,PLAYER_MATCH pm,matches m where pm.player_id=pt.player_id and pm.match_id=m.match_id and team_id=(select team_id from managers where manager_id= mid ) group by m.MATCH_ID,m.MATCH_DATE,m.VENUE,m.OPPONENT,m.TOURNAMENT_NAME,m.STAGE,m.RESULT order by m.MATCH_DATE)
+loop 
+    if(wol(r.result)='WIN') then
+        c1:=c1+1;
+    elsif (wol(r.result)='DRAW') then
+        c2:=c2+1;
+    else
+        c3:=c3+1;
+    end if;
+end loop;
+w:=c1;
+d:=c2;
+l:=c3;
+end;
