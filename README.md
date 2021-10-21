@@ -196,7 +196,7 @@ Football club management software created with JavaFX using Oracle DBMS.
 - [Implementation](3-1/CSE316%20-%20Microprocessors%20and%20Microcontrollers%20Sessional/Assignment/SelectionSort.asm)
 
 ### Project: DX-Ball using micro-controller
-DX-Ball with Dot Matrix and Atmega32. Watch the demo [DX-Ball](https://www.youtube.com/watch?v=QxlbKHyNUz0) video on <img src="https://www.flaticon.com/svg/static/icons/svg/174/174883.svg" height="16" width="16" style="margin-left:5px;">YouTube.
+DX-Ball with Dot Matrix and Atmega32. Watch the demo [DX-Ball](https://www.youtube.com/watch?v=QxlbKHyNUz0) video on <img src="https://emojipedia-us.s3.amazonaws.com/content/2020/04/05/yt.png" height="16" width="16" style="margin-left:5px;">YouTube.
 
 # Level 3 Term 2
 
@@ -284,7 +284,7 @@ __Implementation__
 
 __Video__
 
-Watch the full [DNS cache poisoning](https://www.youtube.com/watch?v=-oCMsx-ntHE) video on <img src="https://www.flaticon.com/svg/static/icons/svg/174/174883.svg" height="16" width="16" style="margin-left:5px;">YouTube.
+Watch the full [DNS cache poisoning](https://www.youtube.com/watch?v=-oCMsx-ntHE) video on <img src="https://emojipedia-us.s3.amazonaws.com/content/2020/04/05/yt.png" height="16" width="16" style="margin-left:5px;">YouTube.
 
 ## Computer Graphics Sessional CSE410
 
