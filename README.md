@@ -244,6 +244,28 @@ process a file in which swapped-out memory pages are stored.
 - [Description](3-2/CSE314%20-%20Operating%20System%20Sessional/xv6%20Paging/xv6-assignment-3/xv6-assignment-3.pdf)
 - [Implementation](3-2/CSE314%20-%20Operating%20System%20Sessional/xv6%20Paging/patch_xv6_Paging_1505057)
 
+## Artificial Intelligence Sessional CSE318
+
+### Assignment 1: Missionaries and Cannibals
+
+- [Description](3-2/CSE318%20-%20Artificial%20Intelligence%20Sessional/Assignment%201%20-%20MnC/problem.txt)
+- [Implementation](3-2/CSE318%20-%20Artificial%20Intelligence%20Sessional/Assignment%201%20-%20MnC)
+
+### Assignment 2: nPuzzle
+
+- [Description](3-2/CSE318%20-%20Artificial%20Intelligence%20Sessional/Assignment%202%20-%20nPuzzle/Offline%202.pdf)
+- [Implementation](3-2/CSE318%20-%20Artificial%20Intelligence%20Sessional/Assignment%202%20-%20nPuzzle)
+
+### Assignment 3: Travelling Salesman Problem
+
+- [Description](3-2/CSE318%20-%20Artificial%20Intelligence%20Sessional/Assignment%203%20-%20TSP/tsp_tasks.pdf)
+- [Implementation](3-2/CSE318%20-%20Artificial%20Intelligence%20Sessional/Assignment%203%20-%20TSP)
+
+### Assignment 4: Adversarial Search
+
+- [Description](3-2/CSE318%20-%20Artificial%20Intelligence%20Sessional/Assignment%204%20-%20Mancala/Assignment%204.pdf)
+- [Implementation](3-2/CSE318%20-%20Artificial%20Intelligence%20Sessional/Assignment%204%20-%20Mancala/1505057.cpp)
+
 # Level 4 Term 1
 ## Computer Security Sessional CSE406
 
