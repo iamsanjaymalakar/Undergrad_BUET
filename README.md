@@ -266,6 +266,33 @@ process a file in which swapped-out memory pages are stored.
 - [Description](3-2/CSE318%20-%20Artificial%20Intelligence%20Sessional/Assignment%204%20-%20Mancala/Assignment%204.pdf)
 - [Implementation](3-2/CSE318%20-%20Artificial%20Intelligence%20Sessional/Assignment%204%20-%20Mancala/1505057.cpp)
 
+## Computer Networks Sessional CSE322
+
+### Assignment 1: Socket Programming
+
+- [Description](3-2/CSE322%20-%20Computer%20Networks%20Sessional/Assignment%201%20-%20Socket%20Programming/Description/Assignment.pdf)
+- [Implementation](3-2/CSE322%20-%20Computer%20Networks%20Sessional/Assignment%201%20-%20Socket%20Programming/1505057%2C1505059_Problem1)
+
+### Assignment 2: DVR
+
+- [Description](3-2/CSE322%20-%20Computer%20Networks%20Sessional/Assignment%202%20-%20DVR/Assignment%202-DVR%20Implementation/assigment2-dvr.pdf)
+- [Implementation](3-2/CSE322%20-%20Computer%20Networks%20Sessional/Assignment%202%20-%20DVR/1505057/router.cpp)
+
+### Assignment 3: Working with NS2 Simulator
+Obbserving the effects of modifying original NS2 parameters/algorithms.
+
+- [Repository](https://github.com/iamsanjaymalakar/NS2-Project)
+
+### Assignment 4: Reliable Transport Protocol
+
+- [Description](3-2/CSE322%20-%20Computer%20Networks%20Sessional/Assignment%204%20-%20Reliable%20Transport%20Protocol/offline_specification.pdf)
+- [Implementation](3-2/CSE322%20-%20Computer%20Networks%20Sessional/Assignment%204%20-%20Reliable%20Transport%20Protocol/1505057)
+
+### Assignment 5: Error Detection and Correction
+
+- [Description](3-2/CSE322%20-%20Computer%20Networks%20Sessional/Assignment%205%20-%20Error%20Detection%20and%20Correction/offline%205/offline%205%20specification.pdf)
+- [Implementation](3-2/CSE322%20-%20Computer%20Networks%20Sessional/Assignment%205%20-%20Error%20Detection%20and%20Correction/1505057/1505057.cpp)
+
 # Level 4 Term 1
 ## Computer Security Sessional CSE406
 
@@ -340,7 +367,19 @@ Rendering a scene using ray casting.
 
 # Level 4 Term 2
 
-## Machine Learning
+## Algorithm Engineering CSE462
+
+### Clique Cover Problem
+Input: An undirected graph G(V,E) and an integer K.
+Output: True if the vertices of G can be partitioned into K sets Si ,whenever
+two vertices in the same sets Si are adjacent. Si do not need to be disjoint,
+they can be non disjoint. But we can make them disjoint by putting common
+vertices in only one set without any problem. Thus we can think Si are disjoint.
+Note: There is also edge clique cover problem but we are only interested in
+vertex clique cover. So if we say clique cover, we are indicating vertex clique
+cover.
+
+## Machine Learning CSE471
 
 ### Assignment 1: Decision Tree and AdaBoost for Classification
 
