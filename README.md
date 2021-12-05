@@ -370,12 +370,14 @@ Rendering a scene using ray casting.
 ## Algorithm Engineering CSE462
 
 ### Clique Cover Problem
-Input: An undirected graph G(V,E) and an integer K.
-Output: True if the vertices of G can be partitioned into K sets Si ,whenever
-two vertices in the same sets Si are adjacent. Si do not need to be disjoint,
+**Input**: An undirected graph _G(V,E)_ and an integer _K_.
+
+**Output**: True if the vertices of _G_ can be partitioned into _K_ sets S<sub>i</sub> ,whenever
+two vertices in the same sets S<sub>i</sub> are adjacent. S<sub>i</sub> do not need to be disjoint,
 they can be non disjoint. But we can make them disjoint by putting common
-vertices in only one set without any problem. Thus we can think Si are disjoint.
-Note: There is also edge clique cover problem but we are only interested in
+vertices in only one set without any problem. Thus we can think S<sub>i</sub> are disjoint.
+
+**Note**: There is also edge clique cover problem but we are only interested in
 vertex clique cover. So if we say clique cover, we are indicating vertex clique
 cover.
 
