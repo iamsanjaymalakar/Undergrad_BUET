@@ -1,4 +1,5 @@
-# UndergradOfflines
+# Undergrad
+This repository contains projects and assginments from my undergraduate career at [BUET](https://www.buet.ac.bd/web/#/).
 
 # Level 1 Term 1
 
